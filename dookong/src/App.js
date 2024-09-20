@@ -13,10 +13,9 @@ import Notice1 from './qa/Notice1';
 import Notice2 from './qa/Notice2';
 import Mail from './qa/Mail';
 
-import ModalLog from './components/ModalLog'; // Modal 컴포넌트 추가
-
 import ModalCheck from './components/ModalCheck';
 import MainPage from './main/MainPage';
+import MapPage from './map/MapPage';
 
 
 
@@ -55,6 +54,8 @@ function App() {
         <Route path="/Notice1" element={isAuthenticated ? <Notice1 onLogout={handleLogout} /> : <ModalLog />}  />
         <Route path="/Notice2" element={isAuthenticated ? <Notice2 onLogout={handleLogout} /> : <ModalLog />}  />
         <Route path="/Mail" element={isAuthenticated ? <Mail onLogout={handleLogout} /> : <ModalLog />}  />
+        <Route path="/Map" element={isAuthenticated ? <MapPage onLogout={handleLogout} /> : <ModalLog />}  />
+        
 
         <Route 
           path="/lank" 

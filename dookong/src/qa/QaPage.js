@@ -13,7 +13,7 @@ const Header = () => (
       <img src={back} alt="back" />
     </a>
     <div className="header-title">고객센터</div>
-    <a href="../pointpage/pointpage.html" className="header-point">
+    <a href="/" className="header-point">
       <img src={kong} alt="kong" />
     </a>
   </header>
