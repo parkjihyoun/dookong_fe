@@ -1,0 +1,311 @@
+/*
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter';
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    max-width: 393px;
+    width: 100%;
+    margin: 0 auto;
+    border: 1px solid #e0e0e0;
+    overflow: hidden;
+    padding: 20px;
+    position: relative;
+}
+*/
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #fff;
+
+}
+
+.container {
+    background-color: #fff;
+    width: 100vw; /* 화면 전체 너비를 차지하게 설정 */
+    margin: 0; /* 좌우 여백을 없앰 */
+    padding: 0; /* 내부 여백을 없앰 */
+    border: none; /* 경계선을 없앰 */
+}
+
+
+
+/*상단바*/
+
+header {
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px
+
+}
+
+.header-back {
+    margin-top: 20px;
+}
+
+.header-title {
+    font-size: 23px;
+    font-weight: 700;
+    margin-top: 20px;
+}
+
+.header-point {
+    margin-top: 20px;
+}
+
+/*프로필*/
+
+.content {
+    padding: 20px;
+    padding-top: 5px;
+    margin: 20px;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    background-color: #F5F5F5;
+    border-radius: 20px;
+    padding-left: 15px;
+    padding-right: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.icon {
+    margin-right: 15px;
+}
+
+.profile-info h1 {
+    font-size: 23px;
+    font-weight: 900;
+    margin-bottom: 0;
+
+}
+
+.profile-info p {
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 5px;
+
+}
+
+.edit {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    padding-right: 20px;
+    margin-left: auto;
+    width: 30px;
+    height: 30px;
+}
+
+/*포인트, 랭크, 이용횟수*/
+
+.point {
+    background-color: #CDE5C5;
+    border-radius: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.total-point, .monthly-point {
+    display: flex;
+    align-items: center;
+}
+
+.rank {
+    background-color: #CDE5C5;
+    border-radius: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.count {
+    background-color: #F9F5D1;
+    border-radius: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    display: flex;
+    align-items: center;
+}
+
+.rank-text {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: flex-start;
+}
+
+.kongicon, .rankicon, .counticon {
+    margin-right: 15px;
+}
+
+.total-info p, .monthly-info p, .rank-info p, .count-info p {
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 0;
+    margin-top: 10px;
+}
+
+.total-info h2, .monthly-info h2, .rank-info h2 {
+    font-size: 23px;
+    font-weight: 700;
+    margin-top: 0px;
+}
+
+.count-info h2 {
+    font-size: 23px;
+    font-weight: 700;
+    margin-top: 0px;
+}
+
+button {
+    background-color: #fff;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #f3f3f3;
+}
+
+/* 팝업 모달 스타일 */
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 10px;
+    width: 280px;
+    max-width: 100%;
+    z-index: 1000;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    background-color: #fff;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.modal-content label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #538F74; /* 원하는 색상으로 변경 */
+    margin-bottom: 0px;
+    display: block;
+}
+
+
+input#current-nickname, input#nickname-input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: 700;
+    background-color: #f5f5f5; /* Slightly different background to indicate it's disabled */
+}
+
+/* Specific to disabled input */
+input#current-nickname:disabled {
+    background-color: #F5F5F5; /* Background for disabled input */
+    color: #000000; /* Gray text color */
+    font-size: 16px;
+    font-weight: 700;
+}
+
+#nickname-input::placeholder {
+    color: #888; /* 원하는 색상으로 변경 */
+    opacity: 1;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.modal-button {
+    background-color: #6BA084;
+    padding: 10px;
+    width: 100%;
+    border-radius: 20px;
+    border: 1px solid #6BA084;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.modal-button:hover {
+    background-color: #6BA084;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* 버튼 */
+.modal-button.save {
+    background-color: #6BA084;
+    color: #fff;
+}
+
+.modal-button.cancel {
+    background-color: #fff;
+    color: #6BA084;
+}
