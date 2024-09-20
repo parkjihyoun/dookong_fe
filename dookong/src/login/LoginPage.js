@@ -31,7 +31,7 @@ export const LoginPage = ({ onLogin }) => {
     // 입력한 아이디와 비밀번호가 로컬 스토리지에 저장된 값과 일치하는지 확인
     if (username === savedUsername && password === savedPassword) {
       onLogin(); // 로그인 성공
-      navigate('/lank'); // 메인 페이지로 이동
+      navigate('/'); // 메인 페이지로 이동
     } else {
       setLoginError('아이디 또는 비밀번호가 일치하지 않습니다.');
     }
@@ -60,7 +60,7 @@ export const LoginPage = ({ onLogin }) => {
       <div className="input-container">
         <input 
           type="text" 
-          placeholder="아이디를 입력하세요" 
+          placeholder="이메일을 입력하세요" 
           className="login-input" 
           value={username} 
           onChange={(e) => setUsername(e.target.value)} 
@@ -94,7 +94,7 @@ export const LoginPage = ({ onLogin }) => {
               />
               <input 
                 type="text" 
-                placeholder="아이디를 입력하세요" 
+                placeholder="이메일을 입력하세요" 
                 className="modal-input" 
                 value={signupUsername}
                 onChange={(e) => setSignupUsername(e.target.value)}
@@ -108,8 +108,9 @@ export const LoginPage = ({ onLogin }) => {
               />
               
               <button className="modal-button" type="submit">회원가입</button>
+              <button className="modal-button" type="button" onClick={closeModal}>닫기</button>
             </form>
-            <button className="modal-close-button" onClick={closeModal}>닫기</button>
+            
           </div>
         </div>
       )}

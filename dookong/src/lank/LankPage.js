@@ -25,7 +25,9 @@ export const LankPage = ({ className, ...props }) => {
   return (
     <div className={`lankpage ${className}`}>
       <div className="ranking-header">
+      <Link to="/">
         <img src={vector0} alt="vector" className="vector-icon" />
+        </Link>
         <h2>랭킹</h2>
       </div>
 

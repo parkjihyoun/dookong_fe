@@ -55,7 +55,7 @@ export const MyPage = () => {
       <div className="container">
         {/* 상단바 */}
         <header>
-          <a href="../login.html" className="header-back">
+          <a href="/" className="header-back">
             <img src={back} alt="back" />
           </a>
           <div className="header-title">마이페이지</div>

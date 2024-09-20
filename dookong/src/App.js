@@ -7,6 +7,8 @@ import ModalLog from './components/ModalLog';
 import AddItem from './manage/addItem';
 import MyPage from './my/MyPage';
 import ModalCheck from './components/ModalCheck';
+import MainPage from './main/MainPage';
+
 
 
 function App() {
@@ -33,6 +35,7 @@ function App() {
   return (
     <Router>
       <Routes>
+      <Route path="/" element={<MainPage />} />
        <Route path="/addItem" element = {<AddItem/>} />
        <Route path="/trashcheck" element = {<ModalCheck/>} />
 
