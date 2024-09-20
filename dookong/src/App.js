@@ -3,8 +3,10 @@ import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-d
 import LankPage from './lank/LankPage';
 import PointPage from './point/PointPage';
 import LoginPage from './login/LoginPage';
-
+import ModalLog from './components/ModalLog'; 
+import AddItem from './manage/addItem';
 import MyPage from './my/MyPage';
+
 import QaPage from './qa/QaPage';
 
 import Notice1 from './qa/Notice1';
@@ -12,6 +14,9 @@ import Notice2 from './qa/Notice2';
 import Mail from './qa/Mail';
 
 import ModalLog from './components/ModalLog'; // Modal 컴포넌트 추가
+
+import ModalCheck from './components/ModalCheck';
+
 
 
 function App() {
@@ -38,13 +43,15 @@ function App() {
   return (
     <Router>
       <Routes>
+       <Route path="/addItem" element = {<AddItem/>} />
+       <Route path="/trashcheck" element = {<ModalCheck/>} />
+
 
         <Route path="/my" element={isAuthenticated ? <MyPage onLogout={handleLogout} /> : <ModalLog />}  />
         <Route path="/qa" element={isAuthenticated ? <QaPage onLogout={handleLogout} /> : <ModalLog />}  />
         <Route path="/Notice1" element={isAuthenticated ? <Notice1 onLogout={handleLogout} /> : <ModalLog />}  />
         <Route path="/Notice2" element={isAuthenticated ? <Notice2 onLogout={handleLogout} /> : <ModalLog />}  />
         <Route path="/Mail" element={isAuthenticated ? <Mail onLogout={handleLogout} /> : <ModalLog />}  />
-
 
         <Route 
           path="/lank" 
@@ -68,3 +75,4 @@ function App() {
 }
 
 export default App;
+
