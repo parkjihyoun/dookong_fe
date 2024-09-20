@@ -8,15 +8,15 @@ import noticeimg from '../assets/notice.png'
 import qnaimg from '../assets/qna.png'
 
 const Header = () => (
-  <header>
-    <a href="../login.html" className="header-back">
-      <img src={back} alt="back" />
-    </a>
+    <header>
+    <Link to="/" className="header-back">
+        <img src={back} alt="back" />
+    </Link>
     <div className="header-title">고객센터</div>
-    <a href="../pointpage/pointpage.html" className="header-point">
-      <img src={kong} alt="kong" />
-    </a>
-  </header>
+    <Link to="/point" className="header-point">
+        <img src={kong} alt="kong" />
+    </Link>
+</header>
 );
 
 const NoticeItem = ({ link, title, date }) => (
