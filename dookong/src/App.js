@@ -6,6 +6,7 @@ import LoginPage from './login/LoginPage';
 import ModalLog from './components/ModalLog'; 
 import AddItem from './manage/addItem';
 import MyPage from './my/MyPage';
+import ModalCheck from './components/ModalCheck';
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
     <Router>
       <Routes>
        <Route path="/addItem" element = {<AddItem/>} />
+       <Route path="/trashcheck" element = {<ModalCheck/>} />
 
         <Route 
           path="/my" element={isAuthenticated ? <MyPage onLogout={handleLogout} /> : <ModalLog />}  />
