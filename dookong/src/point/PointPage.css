@@ -1,0 +1,247 @@
+/* Box Sizing */
+.pointpage,
+.pointpage * {
+  box-sizing: border-box;
+}
+
+/* Point Page Container */
+.pointpage {
+  background: #ffffff;
+  height: 852px;
+  width: 393px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Header Section */
+.pointpage__header {
+  width: 396px;
+  height: 329px;
+  position: relative;
+  margin: 0 auto;
+  padding-bottom: 20px;
+  display: flex;
+}
+
+.pointpage__background {
+  background: #cde5c5;
+  border-radius: 0 0 20px 20px;
+  width: 393px;
+  height: 329px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Points Display */
+.pointpage__points-frame {
+  width: 234px;
+  height: 54px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 139px;
+  overflow: hidden;
+}
+
+.pointpage__points {
+  color: #313131;
+  text-align: center;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 50px;
+  font-weight: 700;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pointpage__unit {
+  color: #313131;
+  text-align: center;
+  font-family: "Alegreya-Bold", sans-serif;
+  font-size: 25px;
+  font-weight: 700;
+  position: absolute;
+  right: -46px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 128px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pointpage__icon {
+  background: rgba(83, 143, 116, 0.8);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  left: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Action Buttons */
+.pointpage__actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  position: absolute;
+  bottom: 80px;
+  left: 5%;
+}
+
+.pointpage__button,
+.pointpage__button-secondary {
+  background-color: #313131;
+  border-radius: 10px;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 173px;
+  height: 45px;
+  box-sizing: border-box;
+}
+
+.pointpage__button-text {
+  color: #ffffff;
+  font-family: "Inter-SemiBold", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  flex: 1;
+}
+
+/* Informational Text */
+.pointpage__info-text {
+  color: #686868;
+  text-align: center;
+  font-family: "Inter-SemiBold", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 270px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Header Frame */
+.pointpage__header-frame {
+  width: 393px;
+  height: 64px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 60px;
+}
+
+.pointpage__header-title {
+  color: #3b403d;
+  text-align: center;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 12px;
+  width: 136px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pointpage__back-vector {
+  width: 12.65;
+  height: 20.9;
+  position: absolute;
+  left: 5%;
+  top: 12px;
+  overflow: visible;
+  cursor: pointer;
+}
+
+/* Store Section */
+.pointpage__store-section {
+  width: 403px;
+  height: 468px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 365px;
+}
+
+.pointpage__store-title {
+  color: #3b403d;
+  text-align: center;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 7px;
+  width: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pointpage__rewards-grid {
+  padding: 9px 1px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  width: 383px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 105px;
+}
+
+/* Category Buttons */
+.pointpage__categories {
+  border-radius: 7px;
+  padding: 6px 0;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+  height: 41px;
+  position: absolute;
+  left: 21px;
+  top: 56px;
+}
+
+/* "준비중입니다.." */
+.coming-soon {
+  grid-column: span 2;
+  text-align: center;
+  margin-top: 20px;
+  color: #686868;
+  font-size: 16px;
+  font-family: "Inter-Bold", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
