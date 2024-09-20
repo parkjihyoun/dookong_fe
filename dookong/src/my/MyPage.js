@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './MyPage.css';
+import { Link } from 'react-router-dom';
 
 import back from '../assets/back.png';
 import kong from '../assets/kong.png';
@@ -7,7 +8,6 @@ import profileimg from '../assets/profileimg.png';
 import editimg from '../assets/edit.png';
 import kongiconimg from '../assets/kongicon.png';
 import rankiconimg from '../assets/3rd.png';
-import counticonimg from '../assets/count.png';
 
 export const MyPage = () => {
     const [nickname, setNickname] = useState('두콩이');
@@ -55,14 +55,14 @@ export const MyPage = () => {
       <div className="container">
         {/* 상단바 */}
         <header>
-          <a href="/" className="header-back">
-            <img src={back} alt="back" />
-          </a>
-          <div className="header-title">마이페이지</div>
-          <a href="../pointpage/pointpage.html" className="header-point">
-            <img src={kong} alt="kong" />
-          </a>
-        </header>
+            <Link to="/" className="header-back">
+                <img src={back} alt="back" />
+            </Link>
+            <div className="header-title">마이페이지</div>
+            <Link to="/point" className="header-point">
+                <img src={kong} alt="kong" />
+            </Link>
+      </header>
 
         <div className="content">
           {/* 프로필 */}
@@ -125,16 +125,12 @@ export const MyPage = () => {
             </button>
           </div>
 
-          {/* 이용횟수 */}
-          <div className="count">
-            <div className="counticon">
-              <img src={counticonimg} alt="counticon" />
-            </div>
-            <div className="count-info">
-              <p>이용 횟수</p>
-              <h2>{usageCount}회</h2>
-            </div>
-          </div>
+        {/* 포인트 적립 버튼 */}
+        <div className="bottom">
+          <button onClick={handleGivePoints}>
+            포인트 적립
+          </button>
+        </div>
 
           {isModalOpen && (
             <>
@@ -170,12 +166,6 @@ export const MyPage = () => {
           )}
         </div>
 
-        {/* 포인트 적립 버튼 */}
-        <div className="bottom">
-          <button onClick={handleGivePoints}>
-            포인트 적립
-          </button>
-        </div>
       </div>
     );
   };
