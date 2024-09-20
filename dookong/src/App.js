@@ -3,7 +3,11 @@ import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-d
 import LankPage from './lank/LankPage';
 import PointPage from './point/PointPage';
 import LoginPage from './login/LoginPage';
+
+import MyPage from './my/MyPage';
+
 import ModalLog from './components/ModalLog'; // Modal 컴포넌트 추가
+
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false); // 로그인 여부 상태
@@ -29,6 +33,8 @@ function App() {
   return (
     <Router>
       <Routes>
+
+        <Route path="/my" element={isAuthenticated ? <MyPage onLogout={handleLogout} /> : <ModalLog />}  />
         <Route 
           path="/lank" 
           element={isAuthenticated ? <LankPage onLogout={handleLogout} /> : <ModalLog />} 
@@ -43,6 +49,7 @@ function App() {
         />
         {/* 로그인 페이지로 이동 */}
         <Route path="*" element={<Navigate to={isAuthenticated ? '/lank' : '/login'} />} />
+
       </Routes>
     </Router>
   );
