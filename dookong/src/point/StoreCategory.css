@@ -1,0 +1,51 @@
+.group-tab {
+    cursor: pointer;
+    flex-shrink: 0;
+    width: 73.93px;
+    height: 30px;
+    position: relative;
+  }
+  
+  .rectangle-tab.unselected {
+    color: #ffffff;
+    background-color: #6ba084;
+    border-radius: 7px;
+    text-align: center;
+    font-family: "Inter-Bold", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+  
+  .unselected {
+    color: #ffffff; 
+  }
+  
+
+  /*선택했을때*/
+  .rectangle-tab.selected {
+    color: #6ba084;
+    text-align: center;
+    font-family: "Inter-Bold", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 7px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border:1px solid #6ba084;
+    
+}
+  
+  .selected {
+    color: #000000; 
+    
+  }
+  
