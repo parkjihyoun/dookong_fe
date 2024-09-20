@@ -1,0 +1,163 @@
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  .lankpage * {
+    box-sizing: border-box;
+  }
+  
+  .lankpage {
+    background: #cde5c5;
+    height: 852px;
+    width: 393px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .ranking-header {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-bottom: 20px;
+    top: 30px; 
+  }
+  
+  .ranking-header h2 {
+    font-family: "Inter-Bold", sans-serif;
+    font-size: 26px;
+    color: #3b403d;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    top: 45px; 
+  }
+  
+  .vector-icon {
+    cursor: pointer;
+    width: 12.65;
+    height: 20.9;
+    position: absolute;
+    left: 10px; 
+    top: 60px;
+  }
+  
+  
+  .top-rankings {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+    margin-top: 100px;
+    
+  }
+  
+  .rank-item {
+    text-align: center;
+  }
+  
+  .rank-name {
+    font-family: "Inter-Bold", sans-serif;
+    font-size: 20px; 
+    margin-bottom: 10px;
+    color: #313131;
+    font-weight: 700;
+  }
+  
+  .profile-img {
+    width: 55px; 
+    height: 55px; 
+    border-radius: 50%;
+    border: 3px solid #538f74;
+    margin-bottom: 10px;
+  }
+  
+  .rank-points {
+    font-family: "Inter-Bold", sans-serif;
+    font-size: 16px; 
+    font-weight: 600;
+    color: #404040;
+  }
+  
+  .rank-medal {
+    width: 50px; 
+    height: 50px; 
+    margin-top: 5px;
+  }
+  
+  .rankings-list {
+    
+    background: #ffffff;
+    border-radius: 20px 20px 0 0;
+    padding: 10px;
+    height: 55%;
+    width: 100%;
+    position: absolute;
+    bottom:0;
+    overflow-y: auto;
+    box-shadow: 0px -5px 5px 0px rgba(0, 0, 0, 0.2);
+  }
+  
+  .ranking-item {
+    
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 10px;
+    border-bottom: 1.5px solid #eee;
+    height: 60px;
+    line-height: 55px;
+  }
+  
+  .rank-number {
+    font-family: "Inter-Bold", sans-serif;
+    font-size: 22px; 
+    font-weight: 700;
+    color: #538f74;
+  }
+  
+  .rank-name {
+    font-family: "Inter-SemiBold", sans-serif;
+    font-size: 18px; 
+    font-weight: 700;
+    color: #313131;
+  }
+  
+  .rank-points {
+    font-family: "Inter-Bold", sans-serif;
+    font-size: 16px; 
+    color: #404040;
+    font-weight: 600;
+  }
+  
+  .lankpage .div1 {
+    color: #ffffff;
+    text-align: center;
+    font-family: "Inter-SemiBold", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  
+  .lankpage .pointpage {
+    background: rgba(49, 49, 49, 0.9);
+    border-radius: 7px;
+    padding: 10px 46px 10px 46px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    width: 254px;
+    height: 45px;
+    position: absolute;
+    left: calc(50% - 126.5px);
+    bottom: 100px;
+  }
+  
+  
+  
