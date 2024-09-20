@@ -3,10 +3,9 @@ import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-d
 import LankPage from './lank/LankPage';
 import PointPage from './point/PointPage';
 import LoginPage from './login/LoginPage';
-
+import ModalLog from './components/ModalLog'; 
+import AddItem from './manage/addItem';
 import MyPage from './my/MyPage';
-
-import ModalLog from './components/ModalLog'; // Modal 컴포넌트 추가
 
 
 function App() {
@@ -33,8 +32,10 @@ function App() {
   return (
     <Router>
       <Routes>
+       <Route path="/addItem" element = {<AddItem/>} />
 
-        <Route path="/my" element={isAuthenticated ? <MyPage onLogout={handleLogout} /> : <ModalLog />}  />
+        <Route 
+          path="/my" element={isAuthenticated ? <MyPage onLogout={handleLogout} /> : <ModalLog />}  />
         <Route 
           path="/lank" 
           element={isAuthenticated ? <LankPage onLogout={handleLogout} /> : <ModalLog />} 
@@ -56,3 +57,4 @@ function App() {
 }
 
 export default App;
+

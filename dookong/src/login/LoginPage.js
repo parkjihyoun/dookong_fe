@@ -9,7 +9,7 @@ export const LoginPage = ({ onLogin }) => {
   const [password, setPassword] = useState('');
   const [signupUsername, setSignupUsername] = useState('');
   const [signupPassword, setSignupPassword] = useState('');
-  const [signupName, setSignupName] = useState(''); // 이름 입력 상태
+  const [signupName, setSignupName] = useState('');
   const [loginError, setLoginError] = useState('');
   const navigate = useNavigate();
 
@@ -118,3 +118,4 @@ export const LoginPage = ({ onLogin }) => {
 };
 
 export default LoginPage;
+
