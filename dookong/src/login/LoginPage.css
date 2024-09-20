@@ -1,0 +1,156 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff;
+  }
+  
+  .login-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 35px;
+    background-color: #ffffff;
+  }
+  
+  h3 {
+    font-size: 18px;
+    color: #6f6f6f;
+    margin-bottom: 0px;
+  }
+  
+  h1 {
+    font-size: 48px;
+    color: #000000;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-top: 5px;
+  }
+  
+  .dookong-image {
+    width: 250px;
+    height: auto;
+    margin-bottom: 30px;
+  }
+  
+  .input-container {
+    display: flex;
+    flex-direction: column;
+    width: 393px;
+    margin-bottom: 20px;
+  }
+  
+  .login-input {
+    padding: 15px;
+    margin-bottom: 10px;
+    margin-left: 55px;
+    margin-right: 55px;
+    border-radius: 10px;
+    border: 1px solid #dcdcdc;
+    font-size: 16px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+  }
+  
+  .login-button {
+    padding: 15px;
+    width: 280px;
+    background-color: #538f74;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .login-button:hover {
+    background-color: #466d63;
+  }
+  
+  .forgot-password {
+    margin-top: -5px;
+    font-size: 14px;
+    color: #6f6f6f;
+    cursor: pointer;
+  }
+  
+  .join {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #6f6f6f;
+    cursor: pointer;
+  }
+  
+  /* 모달 스타일 */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    align-items: center;
+  }
+  
+  .modal h2 {
+    margin-bottom: 30px;
+  }
+  
+  .modal-input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #dcdcdc;
+    font-size: 16px;
+    width: 100%;
+    max-width: 280px;
+    
+  }
+  
+  .modal-button {
+    padding: 10px;
+    width: 280px;
+    background-color: #538f74;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .modal-button:hover {
+    background-color: #466d63;
+  }
+  
+  .modal-close-button {
+    padding: 10px;
+    width:280px;
+    background-color: #538f74;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 35px;
+  }
+  
+  .modal-close-button:hover {
+    background-color: #466d63;
+  }
+  
