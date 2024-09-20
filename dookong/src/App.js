@@ -5,6 +5,8 @@ import PointPage from './point/PointPage';
 import LoginPage from './login/LoginPage';
 import ModalLog from './components/ModalLog'; 
 import AddItem from './manage/addItem';
+import MyPage from './my/MyPage';
+
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false); // 로그인 여부 상태
@@ -30,10 +32,10 @@ function App() {
   return (
     <Router>
       <Routes>
-      <Route 
-          path="/addItem" element = {<AddItem/>} 
-           
-        />
+       <Route path="/addItem" element = {<AddItem/>} />
+
+        <Route 
+          path="/my" element={isAuthenticated ? <MyPage onLogout={handleLogout} /> : <ModalLog />}  />
         <Route 
           path="/lank" 
           element={isAuthenticated ? <LankPage onLogout={handleLogout} /> : <ModalLog />} 
@@ -48,6 +50,7 @@ function App() {
         />
         {/* 로그인 페이지로 이동 */}
         <Route path="*" element={<Navigate to={isAuthenticated ? '/lank' : '/login'} />} />
+
       </Routes>
     </Router>
   );
