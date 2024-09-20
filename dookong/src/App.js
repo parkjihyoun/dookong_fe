@@ -6,7 +6,17 @@ import LoginPage from './login/LoginPage';
 import ModalLog from './components/ModalLog'; 
 import AddItem from './manage/addItem';
 import MyPage from './my/MyPage';
+
+import QaPage from './qa/QaPage';
+
+import Notice1 from './qa/Notice1';
+import Notice2 from './qa/Notice2';
+import Mail from './qa/Mail';
+
+import ModalLog from './components/ModalLog'; // Modal 컴포넌트 추가
+
 import ModalCheck from './components/ModalCheck';
+
 
 
 function App() {
@@ -36,16 +46,22 @@ function App() {
        <Route path="/addItem" element = {<AddItem/>} />
        <Route path="/trashcheck" element = {<ModalCheck/>} />
 
-        <Route 
-          path="/my" element={isAuthenticated ? <MyPage onLogout={handleLogout} /> : <ModalLog />}  />
+
+        <Route path="/my" element={isAuthenticated ? <MyPage onLogout={handleLogout} /> : <ModalLog />}  />
+        <Route path="/qa" element={isAuthenticated ? <QaPage onLogout={handleLogout} /> : <ModalLog />}  />
+        <Route path="/Notice1" element={isAuthenticated ? <Notice1 onLogout={handleLogout} /> : <ModalLog />}  />
+        <Route path="/Notice2" element={isAuthenticated ? <Notice2 onLogout={handleLogout} /> : <ModalLog />}  />
+        <Route path="/Mail" element={isAuthenticated ? <Mail onLogout={handleLogout} /> : <ModalLog />}  />
+
         <Route 
           path="/lank" 
           element={isAuthenticated ? <LankPage onLogout={handleLogout} /> : <ModalLog />} 
         />
-        <Route 
+        <Route s
           path="/point" 
           element={isAuthenticated ? <PointPage onLogout={handleLogout} /> : <ModalLog />} 
         />
+
         <Route 
           path="/login" 
           element={<LoginPage onLogin={handleLogin} />} 
