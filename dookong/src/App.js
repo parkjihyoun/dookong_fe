@@ -16,6 +16,7 @@ import Mail from './qa/Mail';
 
 import ModalCheck from './components/ModalCheck';
 import MainPage from './main/MainPage';
+import MapPage from './map/MapPage';
 
 
 
@@ -54,6 +55,8 @@ function App() {
         <Route path="/Notice1" element={isAuthenticated ? <Notice1 onLogout={handleLogout} /> : <ModalLog />}  />
         <Route path="/Notice2" element={isAuthenticated ? <Notice2 onLogout={handleLogout} /> : <ModalLog />}  />
         <Route path="/Mail" element={isAuthenticated ? <Mail onLogout={handleLogout} /> : <ModalLog />}  />
+        <Route path="/Map" element={isAuthenticated ? <MapPage onLogout={handleLogout} /> : <ModalLog />}  />
+        
 
         <Route 
           path="/lank" 
