@@ -16,6 +16,8 @@ import Mail from './qa/Mail';
 import ModalLog from './components/ModalLog'; // Modal 컴포넌트 추가
 
 import ModalCheck from './components/ModalCheck';
+import MainPage from './main/MainPage';
+
 
 
 
@@ -43,6 +45,7 @@ function App() {
   return (
     <Router>
       <Routes>
+      <Route path="/" element={<MainPage />} />
        <Route path="/addItem" element = {<AddItem/>} />
        <Route path="/trashcheck" element = {<ModalCheck/>} />
 

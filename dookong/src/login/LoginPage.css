@@ -115,17 +115,16 @@ body {
     border-radius: 5px;
     border: 1px solid #dcdcdc;
     font-size: 16px;
-    width: 100%;
+    width: 80%;
     max-width: 280px;
     
   }
-  
+
   .modal-button {
     padding: 10px;
-    width: 280px;
+    width: 80%;
     background-color: #538f74;
     color: white;
-    border: none;
     border-radius: 10px;
     font-size: 16px;
     font-weight: bold;
@@ -136,21 +135,4 @@ body {
     background-color: #466d63;
   }
   
-  .modal-close-button {
-    padding: 10px;
-    width:280px;
-    background-color: #538f74;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    margin-top: 10px;
-    margin-bottom: 35px;
-  }
-  
-  .modal-close-button:hover {
-    background-color: #466d63;
-  }
   
