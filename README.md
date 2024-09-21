@@ -36,7 +36,7 @@
 
 2. 
 
-### :arrow_forward:구현 방식
+### :arrow_forward: 구현 방식
 프론트엔드로는 JavaScript와 React를 사용
 백엔드로는 Java와 Spring을 사용. 배포 미정
 
