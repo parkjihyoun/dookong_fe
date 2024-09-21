@@ -1,5 +1,5 @@
 <img src="https://capsule-render.vercel.app/api?type=waving&height=250&color=gradient&text=dookong&descAlign=24&descAlignY=58">
-# <ItriEone> - <dookong>
+# ItriEone - dookong
 
 ## 서비스 요약
 <b>dookong</b> - 대구 시내, 특히 경북대학교 중심의 쓰레기 분리수거 활성화 플랫폼
