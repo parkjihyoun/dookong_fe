@@ -50,7 +50,7 @@ header {
     margin: 10px;
 }
 
-.profile {
+.my-profile {
     display: flex;
     align-items: center;
     background-color: #F5F5F5;
@@ -59,11 +59,11 @@ header {
     padding-right: 20px;
     padding-top: 10px;
     padding-bottom: 10px;
-    margin-top: 0px;
+    margin-top: 10px;
     margin-bottom: 10px;
 }
 
-.icon {
+.my-icon {
     margin-right: 15px;
 }
 
@@ -81,7 +81,7 @@ header {
 
 }
 
-.edit {
+.logouticon {
     background: none;
     border: none;
     padding: 0;

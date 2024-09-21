@@ -126,29 +126,34 @@ function SearchBar({ map, places, markers, setMarkers, isApiReady }) {
   };
 
   return (
-    <div className="search-container">
-      <input
-        type="text"
-        className="search-input"
-        value={query}
-        onChange={e => setQuery(e.target.value)}
-        placeholder="위치를 검색하세요."
-        onKeyDown={onKeyDown} // onKeyDown 이벤트로 엔터키 처리
-      />
-      <button className="search-button" onClick={() => handleSearch(query)}>
-        <img src={searchIcon} alt="Search" />
-      </button>
+    <div className="search-bar-wrapper">
+      <Link to="/trashcheck" className="camera-link">
+        <img src={cameraImg} alt="Camera" className="camera-icon" />
+      </Link>
+      <div className="search-container">
+        <input
+          type="text"
+          className="search-input"
+          value={query}
+          onChange={e => setQuery(e.target.value)}
+          placeholder="위치를 검색하세요."
+          onKeyDown={onKeyDown} // onKeyDown 이벤트로 엔터키 처리
+        />
+        <button className="search-button" onClick={() => handleSearch(query)}>
+          <img src={searchIcon} alt="Search" />
+        </button>
+      </div>
     </div>
   );
 }
 
 const Header = () => (
   <header>
-    <Link to="/my" className="header-back">
+    <Link to="/" className="header-back">
       <img src={back} alt="back" />
     </Link>
     <div className="header-title">지도</div>
-    <Link to="/point" className="header-point">
+    <Link to="/my" className="header-point">
       <img src={kong} alt="kong" />
     </Link>
   </header>
@@ -161,11 +166,6 @@ function MapPage() {
       <div className="map-page">
         <KakaoMap />
       </div>
-      <footer className="footer-icons">
-        <Link to="/trashcheck">
-          <img src={cameraImg} alt="Camera" />
-        </Link>
-      </footer>
     </div>
   );
 }

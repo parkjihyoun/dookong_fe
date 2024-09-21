@@ -1,5 +1,5 @@
 import React from 'react';
-import './Notice1.css'; // 스타일을 따로 정의하기 위해 Notice1.css 파일을 추가합니다.
+import './Notice1.css';
 
 const Notice1 = () => {
   return (

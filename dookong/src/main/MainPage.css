@@ -8,6 +8,7 @@ body {
 .main-container {
     background-color: #fff;
     width: 100vw;
+    height:100vh;
     margin: 0;
     padding: 0;
     border: none;
@@ -27,28 +28,27 @@ body {
 .hi-text {
     text-align: center;
     width: 100%;
-    padding-top: 20px;
+    margin-top: 30px;
 }
 
 .hi-text h1 {
     font-size: 16px;
     color: #868686;
-    margin-bottom: -40px;
     text-align: center;
-    margin-top: 60px;
-    margin-bottom: -45px;
+    margin-bottom: 0px;
 }
 
 .hi-text h2 {
-    font-size: 20px;
+    font-size: 40px;
     font-weight: bold;
+    margin-top: 5px;
     margin-bottom: 0px;
 }
 
 .hi-img img{
-    width: 120px;
+    width: 180px;
     height: auto;
-    margin-bottom: -20px;
+    margin-bottom: 0px;
 }
 
 /*point*/
@@ -61,9 +61,9 @@ body {
     margin-bottom: 20px;
     margin-left: 20px;
     margin-right: 20px;
-    margin-top: -45px;
     display: flex;
     align-items: center;
+    margin-top: -20px;
 }
 
 .kong-section {
@@ -73,9 +73,8 @@ body {
 .points-section h3 {    
     font-size: 14px;
     color: #7E7E7E;
-    margin-bottom: 0px;
+    margin-bottom: 10px;
     margin-top: 5px;
-    margin-left: 3px;
 }
 
 .points-section img {   
@@ -89,20 +88,20 @@ body {
 }
 
 .points {
-    font-size: 30px;
+    font-size: 50px;
     font-weight: bold;
     color: #313131;
     margin-right: 10px;
-    margin-left: 10px;
+    margin-left: -30px;
     margin-bottom: 5px;
     margin-top: 5px;
 }
 
 .kong {
     font-size: 20px;
+    margin-top: 15px;
     font-weight: bold;
     color: #313131;
-    margin-bottom: -18px;
 }
 
 .tree-section {    
@@ -113,7 +112,7 @@ body {
 }
 
 .tree2 {
-    font-size: 20px;
+    font-size: 15px;
     font-weight: bold;
     color: #6BAA51;
     font: Alkatra;
@@ -145,24 +144,23 @@ body {
     transition: background-color 0.3s ease;
 }
 
-.camera-section img.clicked {
-    opacity: 0.5;
+.camera-section img:hover {
+    opacity: 0.7;
 }
 
 footer {
     display: flex;
-    justify-content: space-around;
-    padding: 20px;
+    align-items: center;
+    padding: 25px;
     border-top: 0.8px solid #CDE5C5;
     margin-bottom: 5px;
     margin-top: -15px;
 }
 
-.footer-icons {
+.main-footer-icons {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    padding: 0 15px;
     margin-top: -10px;
 }
 
