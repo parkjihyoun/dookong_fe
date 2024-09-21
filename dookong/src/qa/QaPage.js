@@ -17,12 +17,11 @@ const Header = () => (
     <a href="/" className="header-point">
       <img src={kong} alt="kong" />
     </a>
-  </header>
 
     <Link to="/point" className="header-point">
         <img src={kong} alt="kong" />
     </Link>
-</header>
+    </header>
 
 );
 
