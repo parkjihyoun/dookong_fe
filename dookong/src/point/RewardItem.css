@@ -1,74 +1,74 @@
 .frame {
-    flex-shrink: 0;
-    width: 187px;
-    height: 147px;
-    position: relative;
-    cursor: pointer;
-  }
+  flex-shrink: 0;
+  width: 187px;
+  height: 147px;
+  position: relative;
+  cursor: pointer;
+}
+
+.group-274 {
+  width: 176px;
+  height: 49px;
+  position: static;
+}
+
+.group-273 {
+  width: 82px;
+  height: 21px;
+  position: static;
+}
+
+.kong-2 {
+  width: 11.74;
+  height: 12.48;
+  position: static;
   
-  .group-274 {
-    width: 176px;
-    height: 49px;
-    position: static;
-  }
-  
-  .group-273 {
-    width: 82px;
-    height: 21px;
-    position: static;
-  }
-  
-  .kong-2 {
-    width: 11.74px;
-    height: 12.48px;
-    position: static;
-  }
-  
-  
-  
-  .group {
-    width: 10%;
-    height: 9%;
-    position: absolute;
-    left: 50%;
-    top: 84.5%;
-    overflow: visible;
-  }
-  
-  .title {
-    color: #404040;
-    text-align: left;
-    font-family: "Inter-Bold", sans-serif;
-    font-size: 16px;
-    line-height: 21px;
-    font-weight: 700;
-    position: absolute;
-    left: 62%;
-    width: 40%;
-    bottom: 5px;
-  }
-  
-  .description {
-    color: #212121;
-    text-align: left;
-    font-family: "Inter-Medium", sans-serif;
-    font-size: 12px;
-    line-height: 16px;
-    font-weight: 500;
-    position: absolute;
-    right: 31.29%;
-    left: 4.28%;
-    width: 64.44%;
-    top: calc(50% - -19.5px);
-    height: 34.55px;
-  }
-  
-  .item-image {
-    width: 176px;
-    height: 93px;
-    position: absolute;
-    left: calc(50% - 85.5px);
-    top: -4px;
-    object-fit: cover;
-  }
-  
+}
+
+
+
+.group {
+  width: 10%;
+  height: 10%;
+  position: absolute;
+  left: 50%;
+  top: 83%;
+  overflow: visible;
+}
+
+.title {
+  color: #404040;
+  text-align: left;
+  font-family: "Inter-Bold", sans-serif;
+  font-size: 16px;
+  line-height: 21px;
+  font-weight: 700;
+  position: absolute;
+  left: 62%;
+  width: 40%;
+  bottom: 5px;
+}
+
+.description {
+  color: #212121;
+  text-align: left;
+  font-family: "Inter-Medium", sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+  position: absolute;
+  right: 31.29%;
+  left: 4.28%;
+  width: 64.44%;
+  top: calc(50% - -19.5px);
+  height: 34.55px;
+}
+
+.item-image {
+  width: 176px;
+  height: 93px;
+  position: absolute;
+  left: calc(50% - 85.5px);
+  top: -4px;
+  object-fit: cover;
+}
