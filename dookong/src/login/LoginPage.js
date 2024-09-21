@@ -128,7 +128,7 @@ export const LoginPage = ({ onLogin }) => {
                 onChange={(e) => setSignupPassword(e.target.value)}
               />
 
-              <button className="modal-ok-button" type="submit">회원가입</button>
+              <button className="modal-ok-button">회원가입</button>
             </form>
             <button className="modal-close-button" onClick={closeModal}>닫기</button>
           </div>
