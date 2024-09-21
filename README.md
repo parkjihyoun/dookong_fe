@@ -1,4 +1,5 @@
-<img src="https://capsule-render.vercel.app/api?type=waving&height=250&color=gradient&text=dookong&desc=%EC%93%B0%EB%A0%88%EA%B8%B0%20%EB%B6%84%EB%A6%AC%EC%88%98%EA%B1%B0%20%ED%99%9C%EC%84%B1%ED%99%94%20%ED%94%8C%EB%9E%AB%ED%8F%BC&descAlign=50&descAlignY=70">
+<img src="https://capsule-render.vercel.app/api?type=waving&height=250&color=gradient&text=dookong&desc=%EC%93%B0%EB%A0%88%EA%B8%B0%20%EB%B6%84%EB%A6%AC%EC%88%98%EA%B1%B0%20%ED%99%9C%EC%84%B1%ED%99%94%20%ED%94%8C%EB%9E%AB%ED%8F%BC&descAlign=50&descAlignY=30">
+
 
 
 # ItriEone - dookong
