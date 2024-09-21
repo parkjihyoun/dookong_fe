@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./LankPage.css";
 import profileImg from "../assets/profile.png";
 import kong from "../assets/kong.png";
@@ -6,21 +6,43 @@ import medal2 from "../assets/medal2.png";
 import medal1 from "../assets/medal1.png";
 import medal3 from "../assets/medal3.png";
 import vector0 from "../assets/vector.svg";
-import { Link } from "react-router-dom";  
+import { Link } from "react-router-dom";
 
 export const LankPage = ({ className, ...props }) => {
-  const topRankings = [
-    { rank: 1, name: "네콩이", points: 1270, img: profileImg, medal: medal1 },
-    { rank: 2, name: "콩콩콩", points: 1150, img: profileImg, medal: medal2 },
-    { rank: 3, name: "두콩이", points: 1140, img: profileImg, medal: medal3 },
-  ];
+  const [topRankings, setTopRankings] = useState([]);
+  const [rankings, setRankings] = useState([]);
 
-  const rankings = [
-    { rank: 4, name: "강두콩", points: 1120 },
-    { rank: 5, name: "완두콩", points: 1116 },
-    { rank: 6, name: "만두콩", points: 1100 },
-    { rank: 7, name: "오콩이", points: 1080 },
-  ];
+  // API에서 랭킹 데이터를 가져오는 함수
+  useEffect(() => {
+    const fetchRankings = async () => {
+      try {
+        const response = await fetch('/api/points/all-ranking');
+        const data = await response.json();
+
+        // 상위 3명의 데이터를 topRankings에 설정
+        const topThree = data.slice(0, 3).map((member, index) => ({
+          rank: index + 1,
+          name: member.username,
+          points: member.totalPoint,
+          img: profileImg,
+          medal: index === 0 ? medal1 : index === 1 ? medal2 : medal3, // 1~3등 메달
+        }));
+        setTopRankings(topThree);
+
+        // 나머지 랭킹 데이터를 rankings에 설정
+        const remainingRankings = data.slice(3).map((member, index) => ({
+          rank: index + 4, // 4등부터 시작
+          name: member.username,
+          points: member.totalPoint,
+        }));
+        setRankings(remainingRankings);
+      } catch (error) {
+        console.error("Failed to fetch rankings:", error);
+      }
+    };
+
+    fetchRankings();
+  }, []);
 
   return (
     <div className={`lankpage ${className}`}>
@@ -28,7 +50,7 @@ export const LankPage = ({ className, ...props }) => {
         <Link to="/my">
           <img src={vector0} alt="vector" className="vector-icon" />
         </Link>
-          <h2>랭킹</h2>
+        <h2>랭킹</h2>
         <Link to="/point">
           <img src={kong} alt="kong" className="point-icon" />
         </Link>
