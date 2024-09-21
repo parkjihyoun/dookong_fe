@@ -4,7 +4,7 @@
 
 # 🫛ItriEone - dookong🫛
 ![dookong](https://github.com/user-attachments/assets/7641dfab-6b4a-4434-a561-7e4217502f3a)
-<h3>안녕하세요, 저희는 <span style="color:green;">dookong</span>입니다!</h3>
+<h3>안녕하세요, 저희는 **dookong**입니다!</h3>
 
 
 ## :round_pushpin:서비스 요약
