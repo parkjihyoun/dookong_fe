@@ -6,34 +6,37 @@ function AllPoint({ showModal, onClose }) {
   const [pointsData, setPointsData] = useState({ earned: [], used: [] });
   const navigate = useNavigate(); // useNavigate 훅 사용
 
-  // Simulating fetching data (You should replace this with your API call)
+  // API를 통해 로그인된 유저의 포인트 사용 내역 가져오기
   useEffect(() => {
-    const fetchPointsData = () => {
-      const dummyData = {
-        earned: [
-          { date: '2024-09-01', points: 10, description: '분리수거 완료' },
-          { date: '2024-09-05', points: 10, description: '분리수거 완료' },
-          { date: '2024-09-06', points: 10, description: '분리수거 완료' },
-          { date: '2024-09-05', points: 10, description: '분리수거 완료' },
-          { date: '2024-09-09', points: 10, description: '분리수거 완료' },
-        ],
-        used: [
-          { date: '2024-09-10', points: -800, rewardItem: 'cu상품권', description: '' },
-          { date: '2024-09-12', points: -18000, rewardItem: '치킨상품권', description: '' },
-        ],
-      };
+    const fetchPointsData = async () => {
+      try {
+        // localStorage에서 memberId 가져오기
+        const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+        const memberId = userInfo?.memberId;
 
-      dummyData.used = dummyData.used.map((item) => {
-        if (item.rewardItem) {
-          return {
-            ...item,
-            description: `${item.rewardItem} 구매`,
-          };
+        if (!memberId) {
+          console.error("Member ID가 존재하지 않습니다.");
+          return;
         }
-        return item;
-      });
 
-      setPointsData(dummyData);
+        const response = await fetch(`/api/points/all/${memberId}`);
+        if (!response.ok) {
+          throw new Error('Failed to fetch points data');
+        }
+
+        const data = await response.json();
+
+        // 적립 내역과 사용 내역을 구분하여 pointsData에 저장
+        const earned = data.filter((item) => item.pointValue > 0);
+        const used = data.filter((item) => item.pointValue < 0);
+
+        setPointsData({
+          earned,
+          used,
+        });
+      } catch (error) {
+        console.error('Error fetching points data:', error);
+      }
     };
 
     fetchPointsData();
@@ -46,7 +49,7 @@ function AllPoint({ showModal, onClose }) {
     }
   };
 
-  if (!showModal) return null; 
+  if (!showModal) return null;
 
   return (
     <div className="modal-overlay" onClick={handleCloseModal}>
@@ -56,26 +59,34 @@ function AllPoint({ showModal, onClose }) {
         <h2>포인트 적립내역</h2>
         <div className="points-section">
           <div className="pointplus">
-            {pointsData.earned.map((item, index) => (
-              <div key={index}>
-                <span>{item.date}</span>
-                <span>+{item.points} 콩</span>
-                <span>{item.description}</span>
-              </div>
-            ))}
+            {pointsData.earned.length > 0 ? (
+              pointsData.earned.map((item, index) => (
+                <div key={index}>
+                  <span>{new Date(item.date).toLocaleDateString()}</span>
+                  <span>+{item.pointValue} 콩</span>
+                  <span>{item.description}</span>
+                </div>
+              ))
+            ) : (
+              <p>포인트 적립 내역이 없습니다.</p>
+            )}
           </div>
         </div>
 
         <h2>포인트 사용내역</h2>
         <div className="points-section">
           <div className="pointminus">
-            {pointsData.used.map((item, index) => (
-              <div key={index}>
-                <span>{item.date}</span>
-                <span>{item.points} 콩</span>
-                <span>{item.description}</span>
-              </div>
-            ))}
+            {pointsData.used.length > 0 ? (
+              pointsData.used.map((item, index) => (
+                <div key={index}>
+                  <span>{new Date(item.date).toLocaleDateString()}</span>
+                  <span>{item.pointValue} 콩</span>
+                  <span>{item.description}</span>
+                </div>
+              ))
+            ) : (
+              <p>포인트 사용 내역이 없습니다.</p>
+            )}
           </div>
         </div>
 

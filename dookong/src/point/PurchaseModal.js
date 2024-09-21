@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
-import './PurchaseModal.css'; 
+import './PurchaseModal.css';
 
 const PurchaseModal = ({ isOpen, onClose, onConfirm, reward, totalPoints }) => {
-  const [errorMessage, setErrorMessage] = useState(''); 
+  const [errorMessage, setErrorMessage] = useState('');
 
-  if (!isOpen) return null; 
+  if (!isOpen) return null;
 
   const handlePurchase = () => {
     if (totalPoints < reward.requiredPoints) {
-      setErrorMessage('콩이 부족해요!'); 
+      setErrorMessage('콩이 부족해요!');
     } else {
+      console.log('구매하려는 상품 ID:', reward.id); // 로그로 확인
       onConfirm(); // 구매 로직 실행
-      setErrorMessage(''); 
+      setErrorMessage('');
     }
   };
 
