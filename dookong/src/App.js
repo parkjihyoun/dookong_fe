@@ -7,7 +7,7 @@ import ModalLog from './components/ModalLog';
 import AddItem from './manage/addItem';
 import MyPage from './my/MyPage';
 import QaPage from './qa/QaPage';
-
+import ImgCheck from './manage/ImgCheck';
 import CheckPage from './manage/CheckPage';
 
 import Notice1 from './qa/Notice1';
@@ -48,6 +48,7 @@ function App() {
   return (
     <Router>
       <Routes>
+      <Route path="/checkimg" element={<ImgCheck />} />
 
        <Route path="/ManMain" element={<ManMain />} />
        <Route path="/addItem" element = {<AddItem/>} />
