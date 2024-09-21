@@ -71,6 +71,8 @@ body {
 
 }
 
+/*공지사항, 문의하기*/
+
 .qa-content {
     padding: 20px;
     margin-top: 20px;
@@ -113,5 +115,5 @@ body {
 }
 
 .notice-item:hover, .qna-item:hover {
-    opacity: 0.7; /* hover 효과 추가 가능 */
+    opacity: 0.7;
 }

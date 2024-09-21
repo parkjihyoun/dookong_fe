@@ -88,10 +88,10 @@ function ModalCheck() {
         </div>
 
         <div className="modalCheck-buttons">
-          <div className="modalCheck-button submit-button" onClick={handleSubmit}>
+          <div className="modalCheck-button submit-buttonn" onClick={handleSubmit}>
             등록하기
           </div>
-          <div className="modalCheck-button cancel-button" onClick={handleCancel}>
+          <div className="modalCheck-button cancel-buttonn" onClick={handleCancel}>
             취소
           </div>
         </div>
