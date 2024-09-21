@@ -29,15 +29,27 @@ export const LoginPage = ({ onLogin }) => {
       const response = await fetch('/api/members/login', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email: username, password })
+        body: JSON.stringify({ email: username, password }),
       });
       const data = await response.json();
+
       if (response.ok) {
-        localStorage.setItem('userInfo', JSON.stringify(data)); // 로컬 스토리지에 사용자 정보 저장
-        onLogin(); // 로그인 상태 변경
-        navigate('/'); // 메인 페이지로 이동
+        // 로그인 성공, 사용자 정보를 로컬 스토리지에 저장
+        localStorage.setItem('userInfo', JSON.stringify(data)); 
+
+        // 로그인 후 역할(role)을 확인하여 리다이렉션
+        if (data.role === 'admin') {
+          // 관리자인 경우
+          navigate('/manmain'); // 관리자 페이지로 이동
+        } else {
+          // 일반 사용자
+          navigate('/'); // 메인 페이지로 이동
+        }
+
+        // 로그인 상태 변경
+        onLogin();
       } else {
         setLoginError('아이디 또는 비밀번호가 일치하지 않습니다.');
       }
@@ -54,13 +66,13 @@ export const LoginPage = ({ onLogin }) => {
       const response = await fetch('/api/members/register', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify({
           username: signupUsername,
           email: signupEmail,
-          password: signupPassword
-        })
+          password: signupPassword,
+        }),
       });
       if (response.ok) {
         closeModal(); // 회원가입 모달 닫기
@@ -96,9 +108,13 @@ export const LoginPage = ({ onLogin }) => {
         />
       </div>
 
-      <button className="login-button" onClick={handleLogin}>로그인</button>
+      <button className="login-button" onClick={handleLogin}>
+        로그인
+      </button>
       {loginError && <p className="error-message">{loginError}</p>}
-      <p className="join" onClick={openModal}>회원가입</p>
+      <p className="join" onClick={openModal}>
+        회원가입
+      </p>
 
       {/* 회원가입 모달 */}
       {isModalOpen && (
@@ -130,7 +146,9 @@ export const LoginPage = ({ onLogin }) => {
 
               <button className="modal-ok-button">회원가입</button>
             </form>
-            <button className="modal-close-button" onClick={closeModal}>닫기</button>
+            <button className="modal-close-button" onClick={closeModal}>
+              닫기
+            </button>
           </div>
         </div>
       )}
