@@ -14,8 +14,7 @@ import QaPage from './qa/QaPage';
 import ModalLog from './components/ModalLog'; 
 import ModalCheck from './components/ModalCheck';
 
-import ImgCheck from './manage/ImgCheck';
-import CheckPage from './manage/CheckPage';
+
 import AllPoint from './components/AllPoint';
 
 import Notice1 from './qa/Notice1';
