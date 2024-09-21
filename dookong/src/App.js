@@ -9,7 +9,7 @@ import MyPage from './my/MyPage';
 import QaPage from './qa/QaPage';
 import ImgCheck from './manage/ImgCheck';
 import CheckPage from './manage/CheckPage';
-
+import AllPoint from './components/AllPoint';
 import Notice1 from './qa/Notice1';
 import Notice2 from './qa/Notice2';
 import Mail from './qa/Mail';
@@ -49,6 +49,7 @@ function App() {
     <Router>
       <Routes>
       <Route path="/checkimg" element={<ImgCheck />} />
+      <Route path="/allpoint" element={<AllPoint showModal={true} onClose={() => {}} />} />
 
        <Route path="/ManMain" element={<ManMain />} />
        <Route path="/addItem" element = {<AddItem/>} />
