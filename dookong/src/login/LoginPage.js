@@ -99,7 +99,6 @@ export const LoginPage = ({ onLogin }) => {
       <button className="login-button" onClick={handleLogin}>로그인</button>
       {loginError && <p className="error-message">{loginError}</p>}
       <p className="join" onClick={openModal}>회원가입</p>
-      <p className="forgot-password">비밀번호를 잊으셨나요?</p>
 
       {/* 회원가입 모달 */}
       {isModalOpen && (

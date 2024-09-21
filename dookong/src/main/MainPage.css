@@ -3,10 +3,9 @@ body {
     padding: 0;
     font-family: 'Arial', sans-serif;
     background-color: #fff;
-
 }
 
-.container {
+.main-container {
     background-color: #fff;
     width: 100vw;
     margin: 0;
@@ -18,35 +17,38 @@ body {
 /*head*/
 
 .hi {
-    display: flex;              /* Flexbox 사용 */
-    flex-direction: column;     /* 세로 방향 정렬 */
-    align-items: center;        /* 수평 가운데 정렬 */
-    justify-content: center;    /* 수직 가운데 정렬 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     margin-bottom: 20px;       
 }
 
 .hi-text {
     text-align: center;
-    width: 100%; /* 부모 요소의 전체 너비를 사용 */
+    width: 100%;
+    padding-top: 20px;
 }
 
 .hi-text h1 {
     font-size: 16px;
     color: #868686;
-    margin-bottom: -30px;
+    margin-bottom: -40px;
     text-align: center;
     margin-top: 60px;
+    margin-bottom: -45px;
 }
 
 .hi-text h2 {
-    font-size: 50px;
+    font-size: 20px;
     font-weight: bold;
-    margin-bottom: 15px;
+    margin-bottom: 0px;
 }
 
 .hi-img img{
-    width: 238px;
+    width: 120px;
     height: auto;
+    margin-bottom: -20px;
 }
 
 /*point*/
@@ -54,27 +56,31 @@ body {
 .points-section {
     background-color: #F9F5D1;
     padding: 10px;
-    padding-left: 20px;
+    padding-left: 30px;
     border-radius: 20px;
     margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: -45px;
     display: flex;
     align-items: center;
 }
 
 .kong-section {
-    margin-right: 50px;
+    margin-right: 60px;
 }
-.points-section h3 {    /*누적포인트*/
+
+.points-section h3 {    
     font-size: 14px;
     color: #7E7E7E;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
     margin-top: 5px;
     margin-left: 3px;
 }
 
-.points-section img {   /*새싹*/
+.points-section img {   
     margin-left: 10px;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .kong-info {
@@ -83,11 +89,11 @@ body {
 }
 
 .points {
-    font-size: 50px;
+    font-size: 30px;
     font-weight: bold;
     color: #313131;
     margin-right: 10px;
-    margin-left: -10px;
+    margin-left: 10px;
     margin-bottom: 5px;
     margin-top: 5px;
 }
@@ -99,10 +105,11 @@ body {
     margin-bottom: -18px;
 }
 
-.tree-section {     /* 당신은~살렸어요! */
+.tree-section {    
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: -10px;
 }
 
 .tree2 {
@@ -114,6 +121,7 @@ body {
     margin-right: 5px;
     margin-bottom: 5px;
 }
+
 .tree-status {
     font-size: 14px;
     color: #888;
@@ -121,19 +129,19 @@ body {
 
 .camera-section {
     text-align: center;
-    width: 100%; /* 부모 요소의 전체 너비를 사용 */
-    margin-top: 20px;
+    width: 100%;
+    margin-top: 10px;
 }
 
 .camera-section h1 {
     font-size: 14px;
     color: #7E7E7E;
-    margin-top: 10px;
-    margin-bottom: 40px;
+    margin-bottom: 0px;
 }
 
 .camera-section img {
-    
+    width: 100px;
+    height: auto;
     transition: background-color 0.3s ease;
 }
 
@@ -146,13 +154,16 @@ footer {
     justify-content: space-around;
     padding: 20px;
     border-top: 0.8px solid #CDE5C5;
+    margin-bottom: 5px;
+    margin-top: -15px;
 }
 
 .footer-icons {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    padding: 0 10px;
+    padding: 0 15px;
+    margin-top: -10px;
 }
 
 .icon {
@@ -160,3 +171,4 @@ footer {
     color: #555;
     cursor: pointer;
 }
+

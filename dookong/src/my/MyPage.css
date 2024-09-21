@@ -6,9 +6,10 @@ body {
 
 }
 
-.container {
+.my-container {
     background-color: #fff;
     width: 100vw;
+    height:100vh;
     margin: 0;
     padding: 0;
     border: none;
@@ -22,8 +23,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 20px
-
+    margin: 20px;
 }
 
 .header-back {
@@ -44,10 +44,10 @@ header {
 
 /*프로필*/
 
-.content {
+.my-content {
     padding: 20px;
     padding-top: 5px;
-    margin: 20px;
+    margin: 10px;
 }
 
 .profile {

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './MyPage.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom'; // useNavigate 추가
 
 import back from '../assets/back.png';
 import kong from '../assets/kong.png';
@@ -17,6 +17,8 @@ export const MyPage = () => {
   const [totalPoints, setTotalPoints] = useState(0); // 누적 포인트 상태
   const [monthlyPoints, setMonthlyPoints] = useState(0); // 이번 달 포인트 상태
   const [rank, setRank] = useState(0); // 사용자 순위 상태
+
+  const navigate = useNavigate(); // useNavigate 훅 사용
 
   // 로컬 스토리지에서 사용자 정보 가져오기 및 API 호출
   useEffect(() => {
@@ -64,7 +66,6 @@ export const MyPage = () => {
     }
   }, []);
 
-
   const openEditModal = () => {
     setIsModalOpen(true);
   };
@@ -92,7 +93,7 @@ export const MyPage = () => {
   };
 
   return (
-    <div className="container">
+    <div className="my-container">
       {/* 상단바 */}
       <header>
         <Link to="/" className="header-back">
@@ -104,7 +105,7 @@ export const MyPage = () => {
         </Link>
       </header>
 
-      <div className="content">
+      <div className="my-content">
         {/* 프로필 */}
         <div className="profile">
           <div className="icon">
@@ -139,12 +140,13 @@ export const MyPage = () => {
               <img src={kongiconimg} alt="kongicon" />
             </div>
             <div className="monthly-info">
-              <p>이번 달 포인트</p>
+              <p>이달의 포인트</p>
               <h2>{monthlyPoints} 콩</h2>
             </div>
           </div>
 
-          <button onClick={() => (window.location.href = '../pointpage/pointpage.html')}>
+          {/* 내 포인트 보기 버튼 */}
+          <button onClick={() => navigate('/point')}>
             내 포인트 보기
           </button>
         </div>
@@ -160,7 +162,9 @@ export const MyPage = () => {
               <h2>{rank} 위</h2>
             </div>
           </div>
-          <button onClick={() => (window.location.href = '../lankpage/lankpage.html')}>
+
+          {/* 내 랭킹 보기 버튼 */}
+          <button onClick={() => navigate('/lank')}>
             내 랭킹 보기
           </button>
         </div>

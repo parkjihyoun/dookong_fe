@@ -2,26 +2,24 @@ import React, { useState } from 'react';
 import './QaPage.css';
 import { Link } from 'react-router-dom';
 
-import back from '../assets/back.png'
-import kong from '../assets/kong.png'
-import noticeimg from '../assets/notice.png'
-import qnaimg from '../assets/qna.png'
+import back from '../assets/back.png';
+import kong from '../assets/kong.png';
+import noticeimg from '../assets/notice.png';
+import qnaimg from '../assets/qna.png';
 
 const Header = () => (
     <header>
-    <Link to="/" className="header-back">
+    <Link to="/my" className="header-back">
         <img src={back} alt="back" />
     </Link>
     <div className="header-title">고객센터</div>
 
-    <a href="/" className="header-point">
-      <img src={kong} alt="kong" />
-    </a>
+
 
     <Link to="/point" className="header-point">
         <img src={kong} alt="kong" />
     </Link>
-    </header>
+</header>
 
 );
 
@@ -50,7 +48,7 @@ const QnaItem = () => (
   );
 
 const Content = () => (
-  <div className="content">
+  <div className="qa-content">
     <div className="notice">
       <div className="item">공지사항</div>
       <NoticeItem link="/Notice1" title="dookong 이용 안내" date="2024.09.22" />
@@ -64,13 +62,13 @@ const Content = () => (
 );
 
 const QaPage = () => (
-  <div className="container">
+  <div className="qa-container">
     <Header />
     <div className="explain">
       불편하시거나<br />궁금하신 점이 있으신가요?
     </div>
     <Content />
-    <div className="container__background"></div>
+    <div className="qa-container__background"></div>
   </div>
 );
 
