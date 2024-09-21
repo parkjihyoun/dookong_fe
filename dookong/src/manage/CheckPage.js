@@ -5,10 +5,11 @@ import { useNavigate } from 'react-router-dom';
 import back from '../assets/back.png';
 import kong from '../assets/kong.png';
 import nonekong from '../assets/nonekong.png';
+import ImgCheck from './ImgCheck'; // Import ImgCheck
 
 const CheckPage = () => {
-  const [popupVisible, setPopupVisible] = useState(false);
-  const [selectedItem, setSelectedItem] = useState(null);
+  const [popupVisible, setPopupVisible] = useState(false); // For final confirmation popup
+  const [selectedItem, setSelectedItem] = useState(null); // To handle selected item for ImgCheck modal
   const [showAll, setShowAll] = useState(true);
   const navigate = useNavigate();
 
@@ -25,9 +26,14 @@ const CheckPage = () => {
 
   const [items, setItems] = useState(listItems);
 
+  // Handle item click and open ImgCheck modal
   const handleItemClick = (item) => {
-    setSelectedItem(item);
-    setPopupVisible(true);
+    setSelectedItem(item); // Store the selected item
+  };
+
+  // Trigger the final confirmation popup modal when "지급하기" is clicked in ImgCheck
+  const handleOpenPopup = () => {
+    setPopupVisible(true); // Set popup visible for final confirmation
   };
 
   const handleGivePoints = () => {
@@ -36,10 +42,12 @@ const CheckPage = () => {
     );
     setItems(updatedItems);
     setPopupVisible(false);
+    setSelectedItem(null); // Reset the selected item after confirmation
   };
 
   const handleClosePopup = () => {
     setPopupVisible(false);
+    setSelectedItem(null); // Reset the selected item after closing
   };
 
   const toggleShowAll = () => {
@@ -74,7 +82,7 @@ const CheckPage = () => {
             <div
               key={item.id}
               className={`list-item ${item.completed ? 'completed' : ''}`}
-              onClick={() => handleItemClick(item)}
+              onClick={() => handleItemClick(item)} // Click to open ImgCheck
             >
               <span className="name">{item.name}</span>
               <span className="date">{item.date}</span>
@@ -88,6 +96,17 @@ const CheckPage = () => {
           ))}
       </div>
 
+      {/* Render ImgCheck if an item is selected */}
+      {selectedItem && (
+        <ImgCheck
+          imageUrl={'some_image_url'} // Replace with actual image URL
+          title={selectedItem.name}
+          timestamp={selectedItem.date}
+          openPopup={handleOpenPopup} // Open final confirmation popup
+        />
+      )}
+
+      {/* Final confirmation popup */}
       {popupVisible && (
         <>
           <div id="modal-overlay" className="modal-overlay" onClick={handleClosePopup}></div>

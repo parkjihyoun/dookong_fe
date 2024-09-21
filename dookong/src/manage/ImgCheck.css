@@ -1,0 +1,63 @@
+.photo-confirmation-container {
+    padding: 20px;
+    text-align: center;
+    background-color: #f8f8f8;
+    min-width: 50vh;
+    min-height: 100vh; /* Ensure full screen height */
+  }
+  
+  .photo-confirmation-container h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .photo-confirmation-title {
+    margin-top:10px;
+    margin-bottom: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #555;
+  }
+  
+  .photo-confirmation-timestamp {
+    font-size: 16px;
+    color: #777;
+    margin-bottom: 20px;
+  }
+
+  .photo-confirmation-images {
+    display:grid;
+    justify-content: center;
+    gap: 10px; 
+    flex-direction: column;
+  }
+  
+  .photo-confirmation-images img {
+    width: 100%;
+    height: auto;
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for better focus */
+  }
+  
+  .photo-confirmation-button {
+    padding: 10px 20px;
+    background-color: #609A7F;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 20px;
+    width: 70%;
+  }
+  
+  .photo-confirmation-button:hover {
+    background-color: #78be9d;
+  }
+  
