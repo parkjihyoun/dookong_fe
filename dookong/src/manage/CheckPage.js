@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './CheckPage.css';
 import { useNavigate } from 'react-router-dom';
 
@@ -11,20 +11,35 @@ const CheckPage = () => {
   const [popupVisible, setPopupVisible] = useState(false); // Control modal visibility
   const [confirmationVisible, setConfirmationVisible] = useState(false); // Control confirmation popup visibility
   const [showAll, setShowAll] = useState(true);
+  const [items, setItems] = useState([]); // 초기 값 비어있는 배열로 설정
   const navigate = useNavigate();
 
-  const listItems = [
-    { id: 1, name: '두콩이', date: '2024.09.22 13:25:58', completed: false },
-    { id: 2, name: '세콩이', date: '2024.09.22 13:15:52', completed: false },
-    { id: 3, name: '네콩이', date: '2024.09.22 13:13:45', completed: false },
-    { id: 4, name: '오콩이', date: '2024.09.22 13:04:25', completed: false },
-    { id: 5, name: '육콩이', date: '2024.09.22 13:04:25', completed: false },
-    { id: 6, name: '칠콩이', date: '2024.09.22 13:04:25', completed: false },
-    { id: 7, name: '만두콩', date: '2024.09.22 13:04:25', completed: false },
-    { id: 8, name: '콩콩이', date: '2024.09.22 13:04:25', completed: false }
-  ];
+  // 컴포넌트 마운트 시, 모든 recycling 리스트를 가져옴
+  useEffect(() => {
+    const fetchRecyclingList = async () => {
+      try {
+        const response = await fetch('/api/recycling/all');
+        if (!response.ok) {
+          throw new Error('Failed to fetch recycling data');
+        }
+        const data = await response.json();
+        // API에서 가져온 데이터를 items 상태에 저장
+        const formattedItems = data.map((item) => ({
+          id: item.recyclingId,
+          name: item.member.username,
+          date: item.localDateTime,
+          status: item.recyclingStatus, // 상태를 직접 저장
+          beforePictureUrl: item.beforePictureUrl,
+          afterPictureUrl: item.afterPictureUrl,
+        }));
+        setItems(formattedItems);
+      } catch (error) {
+        console.error('Error fetching recycling data:', error);
+      }
+    };
 
-  const [items, setItems] = useState(listItems);
+    fetchRecyclingList();
+  }, []);
 
   // Handle item click and open modal
   const handleItemClick = (item) => {
@@ -48,24 +63,47 @@ const CheckPage = () => {
   };
 
   // Handle the confirmation popup for points
-  const confirmGivePoints = () => {
-    const updatedItems = items.map((item) =>
-      item.id === selectedItem.id ? { ...item, completed: true } : item
-    );
-    setItems(updatedItems);
-    setConfirmationVisible(false); // Close the confirmation popup
-    closeModal(); // Close the main modal
+  const confirmGivePoints = async () => {
+    try {
+      const response = await fetch(`/api/recycling/approve/${selectedItem.id}`, {
+        method: 'POST',
+      });
+      if (!response.ok) {
+        throw new Error('Failed to approve recycling');
+      }
+      const updatedItems = items.map((item) =>
+        item.id === selectedItem.id ? { ...item, status: 'APPROVED' } : item
+      );
+      setItems(updatedItems); // Update the items state
+      setConfirmationVisible(false); // Close the confirmation popup
+      closeModal(); // Close the main modal
+    } catch (error) {
+      console.error('Error approving recycling:', error);
+    }
+  };
+
+  // Handle the rejection of an item
+  const handleReject = async () => {
+    try {
+      const response = await fetch(`/api/recycling/reject/${selectedItem.id}`, {
+        method: 'POST',
+      });
+      if (!response.ok) {
+        throw new Error('Failed to reject recycling');
+      }
+      const updatedItems = items.map((item) =>
+        item.id === selectedItem.id ? { ...item, status: 'REJECTED' } : item
+      );
+      setItems(updatedItems); // Update the items state
+      closeModal(); // Close the main modal
+    } catch (error) {
+      console.error('Error rejecting recycling:', error);
+    }
   };
 
   // Close the confirmation popup
   const closeConfirmationPopup = () => {
     setConfirmationVisible(false);
-  };
-
-  // Handle rejection by closing the modal and navigating back to the check page
-  const handleReject = () => {
-    closeModal(); // Close the modal
-    navigate('/checkpage'); // Navigate back to the CheckPage
   };
 
   return (
@@ -91,17 +129,17 @@ const CheckPage = () => {
 
       <div className="list">
         {items
-          .filter((item) => (showAll ? true : !item.completed))
+          .filter((item) => showAll || item.status === 'PENDING') // 거절된 항목은 미확인 리스트에서 제외
           .map((item) => (
             <div
               key={item.id}
-              className={`list-item ${item.completed ? 'completed' : ''}`}
+              className={`list-item ${item.status === 'APPROVED' ? 'approved' : item.status === 'REJECTED' ? 'rejected' : 'pending'}`} // 상태에 따른 클래스 설정
               onClick={() => handleItemClick(item)} // Click to open modal
             >
               <span className="name">{item.name}</span>
-              <span className="date">{item.date}</span>
+              <span className="date">{new Date(item.date).toLocaleString()}</span>
               <div className="noneicon">
-                <img src={item.completed ? kong : nonekong} alt="kong" />
+                <img src={item.status === 'APPROVED' ? kong : nonekong} alt="kong" />
               </div>
             </div>
           ))}
@@ -116,8 +154,8 @@ const CheckPage = () => {
               <h4 className="photo-confirmation-title">{selectedItem.name}</h4>
               <p className="photo-confirmation-timestamp">{new Date(selectedItem.date).toLocaleString()}</p>
               <div className="photo-confirmation-images">
-                <img src="some_image_url" alt="분리수거 전" /> {/* Replace with actual image */}
-                <img src="some_image_url" alt="분리수거 후" /> {/* Replace with actual image */}
+                <img src={selectedItem.beforePictureUrl} alt="분리수거 전" />
+                <img src={selectedItem.afterPictureUrl} alt="분리수거 후" />
               </div>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '20px' }}>

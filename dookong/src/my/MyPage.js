@@ -27,7 +27,7 @@ export const MyPage = () => {
     if (userInfo) {
       setNickname(userInfo.username); // userInfo에서 사용자 이름 설정
       setUserId(userInfo.email); // userInfo에서 이메일 설정
-
+      setTotalPoints(userInfo.totalPoints);
       const memberId = userInfo.memberId;
 
       // 이번 달 포인트 가져오기
