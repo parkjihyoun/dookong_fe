@@ -27,8 +27,20 @@ export const MyPage = () => {
     if (userInfo) {
       setNickname(userInfo.username); // userInfo에서 사용자 이름 설정
       setUserId(userInfo.email); // userInfo에서 이메일 설정
-      setTotalPoints(userInfo.totalPoints);
       const memberId = userInfo.memberId;
+
+      // 누적 포인트 가져오기 (GET /api/members/{memberId})
+      fetch(`/api/members/${memberId}`)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error('Failed to fetch total points');
+          }
+          return response.json();
+        })
+        .then((data) => {
+          setTotalPoints(data.totalPoint); // totalPoint 값을 업데이트
+        })
+        .catch((error) => console.error('Error fetching total points:', error));
 
       // 이번 달 포인트 가져오기
       fetch(`/api/points/monthly/${memberId}`)
@@ -96,7 +108,7 @@ export const MyPage = () => {
   const handleLogout = () => {
     // localStorage에서 사용자 정보 제거
     localStorage.removeItem('userInfo');
-  
+
     // 로그아웃 후 홈 페이지로 리디렉션
     navigate('/login');
   };
