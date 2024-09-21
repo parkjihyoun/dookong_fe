@@ -120,21 +120,39 @@ body {
     
   }
 
-  .modal .modal-button {
-    padding: 12px;
-    width: 100%;
-    background-color: #466d63;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-
-.modal .modal-button:hover {
-    background-color: #1a332d;
+  /* 회원가입 버튼 스타일 */
+.modal-ok-button {
+  padding: 10px 20px;
+  background-color: #538f74; /* 회원가입 버튼 배경색 */
+  color: white; /* 글자색 */
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%; /* 버튼을 전체 너비로 설정 */
+  max-width: 280px;
+  margin-bottom: 15px;
 }
 
-  
-  
+.modal-ok-button:hover {
+  background-color: #466d63; /* hover 시 색상 변경 */
+}
+
+/* 취소 버튼 스타일 */
+.modal-close-button {
+  padding: 10px 20px;
+  background-color: #ff5c5c; /* 취소 버튼 배경색 (빨강) */
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%; /* 버튼을 전체 너비로 설정 */
+  max-width: 280px;
+}
+
+.modal-close-button:hover {
+  background-color: #cc4949; /* hover 시 색상 변경 */
+}

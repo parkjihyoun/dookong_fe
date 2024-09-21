@@ -108,7 +108,7 @@ export const LoginPage = ({ onLogin }) => {
             <form onSubmit={handleSignup}>
               <input
                 type="text"
-                placeholder="이름(별명)을 입력하세요 ☺️"
+                placeholder="이름(별명)을 입력하세요"
                 className="modal-input"
                 value={signupUsername}
                 onChange={(e) => setSignupUsername(e.target.value)}
@@ -128,7 +128,7 @@ export const LoginPage = ({ onLogin }) => {
                 onChange={(e) => setSignupPassword(e.target.value)}
               />
 
-              <button className="modal-button" type="submit">회원가입</button>
+              <button className="modal-ok-button" type="submit">회원가입</button>
             </form>
             <button className="modal-close-button" onClick={closeModal}>닫기</button>
           </div>

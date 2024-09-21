@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom'; // useNavigate 추가
 import './MainPage.css'; 
 import dookongImg from '../assets/dookong.png'; // 이미지 경로 import
 import plantImg from '../assets/plant.png';
@@ -81,17 +81,14 @@ function MainPage() {
         </div>
 
         <div className="camera-section">
-          <img
-            src={cameraImg}
-            alt="Camera"
-            className={clicked ? 'clicked' : ''}
-            onClick={handleImageClick}
-          />
+        <Link to="/trashcheck" className="camera-link">
+          <img src={cameraImg} alt="Camera" className="camera-icon" />
+        </Link>
           <h1>완두콩 모으러 가기</h1>
         </div>
 
         <footer>
-          <div className="footer-icons">
+          <div className="main-footer-icons">
             <img onClick={goToMyPage} src={personImg} alt="personImg" />
             <img onClick={goToPointPage} src={coinImg} alt="coinImg" />
             <img onClick={goToMapPage} src={gpsImg} alt="gpsImg" />

@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router-dom'; // useNavigate 추가
 import back from '../assets/back.png';
 import kong from '../assets/kong.png';
 import profileimg from '../assets/profileimg.png';
-import editimg from '../assets/edit.png';
+import logouticon from '../assets/logouticon.png';
 import kongiconimg from '../assets/kongicon.png';
 import rankiconimg from '../assets/3rd.png';
 
@@ -100,15 +100,15 @@ export const MyPage = () => {
           <img src={back} alt="back" />
         </Link>
         <div className="header-title">마이페이지</div>
-        <Link to="/point" className="header-point">
+        <Link to="/my" className="header-point">
           <img src={kong} alt="kong" />
         </Link>
       </header>
 
       <div className="my-content">
         {/* 프로필 */}
-        <div className="profile">
-          <div className="icon">
+        <div className="my-profile">
+          <div className="my-icon">
             <img src={profileimg} alt="dookong" />
           </div>
           <div className="profile-info">
@@ -116,8 +116,8 @@ export const MyPage = () => {
             <p id="profile-id">{userId}</p>
           </div>
 
-          <button className="edit" onClick={openEditModal}>
-            <img src={editimg} alt="edit" />
+          <button className="logouticon" onClick={openEditModal}>
+            <img src={logouticon} alt="logouticon" />
           </button>
         </div>
 
@@ -166,13 +166,6 @@ export const MyPage = () => {
           {/* 내 랭킹 보기 버튼 */}
           <button onClick={() => navigate('/lank')}>
             내 랭킹 보기
-          </button>
-        </div>
-
-        {/* 포인트 적립 버튼 */}
-        <div className="bottom">
-          <button onClick={handleGivePoints}>
-            포인트 적립
           </button>
         </div>
 

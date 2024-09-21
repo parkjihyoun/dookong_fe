@@ -51,16 +51,24 @@ header {
   cursor: pointer;
 }
 
+/* 검색 바 컨테이너 및 아이콘 배치 */
+.search-bar-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
 /* 검색 창 컨테이너 */
 .search-container {
-  margin-bottom: 10px;
   display: flex;
   align-items: center;
   border: 1.5px solid #cce2cd;
   border-radius: 25px;
-  padding: 5px 10px;
+  padding: 0px 5px;
   width: 100%;
-  height: 40px;
   max-width: 340px;
 }
 
@@ -70,7 +78,6 @@ header {
   padding: 10px;
   flex: 1;
   font-size: 16px;
-  height: 20px;
   font-weight: 600;
 }
 
@@ -91,11 +98,16 @@ header {
   height: 20px;
 }
 
-.footer-icons {
-  display: flex;
-  justify-content: center;
-  padding: 10px;
+/* 카메라 아이콘 */
+.camera-link {
+  margin-right: 10px;
 }
+
+.camera-icon {
+  width: 50px;
+  height: 50px;
+}
+
 
 /* 반응형 스타일 */
 @media (max-width: 1170px) {
