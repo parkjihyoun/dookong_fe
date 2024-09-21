@@ -6,7 +6,7 @@
 # 🫛ItriEone - dookong🫛
 ![dookong](https://github.com/user-attachments/assets/7641dfab-6b4a-4434-a561-7e4217502f3a)
 <h3>안녕하세요, 저희는 :star2:dookong:star2: 입니다!</h3>
-
+<br></br>
 
 ## :round_pushpin:서비스 요약
 - <b>dookong</b> - 대구 시내, 특히 경북대학교 중심의 쓰레기 분리수거 활성화 플랫폼
