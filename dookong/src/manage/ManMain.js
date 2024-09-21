@@ -39,21 +39,7 @@ function ManMain() {
             <p className="manpoints">관리자 페이지</p>
         </div>
 
-        <div className="mantree-section">
-          <span className="mantree1">당신은 지금까지 </span>
-          <span className="mantree2">1</span>
-          <span className="mantree3">그루의 나무를 살렸어요!</span>
-        </div>
-
-        <div className="camera-section">
-          <img
-            src={cameraImg}
-            alt="Camera"
-            className={manClicked ? 'clicked' : ''} // clicked 클래스 적용 조건 변경
-            onClick={handleManImageClick} // onClick 함수 이름 변경
-          />
           <h1>완두콩 모으러 가기</h1>
-        </div>
       </div>
     </div>
   );
