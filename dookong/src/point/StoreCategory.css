@@ -15,7 +15,7 @@
     font-size: 16px;
     font-weight: 700;
     position: absolute;
-    width: 100%;
+    width: 90%;
     height: 100%;
     display: flex;
     align-items: center;
@@ -35,7 +35,7 @@
     font-weight: 700;
     border-radius: 7px;
     position: absolute;
-    width: 100%;
+    width: 90%;
     height: 100%;
     display: flex;
     align-items: center;
