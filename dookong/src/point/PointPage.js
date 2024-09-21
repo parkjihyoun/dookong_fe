@@ -100,8 +100,7 @@ const PointPage = ({ className = '', ...props }) => {
 
   const renderRewardItems = () => {
     const rewardsInCategory = rewards[selectedCategory] || [];
-    if (rewardsInCategory.length === 0 )) {
-
+    if (rewards.length === 0) {
       return <div className="coming-soon">준비중입니다..</div>;
     }
 
