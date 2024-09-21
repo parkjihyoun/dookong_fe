@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react'; // useEffect 추가
 import { Link, useNavigate } from 'react-router-dom'; // useNavigate 추가
-import './MainPage.css'; 
+import './MainPage.css';
 import dookongImg from '../assets/dookong.png'; // 이미지 경로 import
 import plantImg from '../assets/plant.png';
 import cameraImg from '../assets/camera.png';
@@ -11,11 +11,9 @@ import coinImg from '../assets/coin.png';
 import stairImg from '../assets/stair.png';
 
 function MainPage() {
-  const [clicked, setClicked] = useState(false);
-  
-  // 포인트 변수 (예시로 4750 포인트)
-  const points = 4750;
-  
+  const [points, setPoints] = useState(0); // Default to 0 points initially
+  const [memberId, setMemberId] = useState(null);
+
   // 1000 포인트당 1 그루의 나무를 살렸다고 계산
   const treesSaved = Math.floor(points / 1000);
 
@@ -40,15 +38,36 @@ function MainPage() {
 
   const goToMapPage = () => {
     navigate('/map');
-  }; 
-
-  const handleImageClick = () => {
-    setClicked(true);
-
-    setTimeout(() => {
-      setClicked(false);
-    }, 200); // 200 밀리초 후에 다시 원래 상태로
   };
+
+  useEffect(() => {
+    // localStorage에서 memberId 가져오기
+    const storedUserInfo = JSON.parse(localStorage.getItem('userInfo'));
+
+    if (storedUserInfo && storedUserInfo.memberId) {
+      setMemberId(storedUserInfo.memberId); // memberId 상태 설정
+    } else {
+      // memberId가 없으면 로그인 페이지로 리디렉션
+      navigate('/login');
+    }
+  }, [navigate]);
+
+  useEffect(() => {
+    if (memberId) {
+      // Fetch the user's points
+      const fetchUserPoints = async () => {
+        try {
+          const response = await fetch(`/api/members/${memberId}`);
+          const data = await response.json();
+          setPoints(data.totalPoint); // Set the points from the fetched data
+        } catch (error) {
+          console.error('Error fetching user points:', error);
+        }
+      };
+
+      fetchUserPoints(); // Call the function to fetch user points
+    }
+  }, [memberId]);
 
   return (
     <div className="main-container">
@@ -81,9 +100,9 @@ function MainPage() {
         </div>
 
         <div className="camera-section">
-        <Link to="/trashcheck" className="camera-link">
-          <img src={cameraImg} alt="Camera" className="camera-icon" />
-        </Link>
+          <Link to="/trashcheck" className="camera-link">
+            <img src={cameraImg} alt="Camera" className="camera-icon" />
+          </Link>
           <h1>완두콩 모으러 가기</h1>
         </div>
 
@@ -102,4 +121,3 @@ function MainPage() {
 }
 
 export default MainPage;
-

@@ -7,7 +7,7 @@ const RewardItem = ({ imageSrc, groupSrc, title, description }) => {
       <div className="group-274">
         <div className="group-273">
           <div className="kong-2">
-            
+
             <img className="group" src={groupSrc} alt="Group Icon" />
           </div>
           <div className="title">{title}</div>
