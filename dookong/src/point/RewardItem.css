@@ -19,10 +19,24 @@
 }
 
 .kong-2 {
-  width: 11.74;
-  height: 12.48;
+  width: 12;
+  height: 12;
   position: static;
   
+}
+
+.title {
+  color: #404040;
+  font-size: 16px; 
+  line-height: 21px;
+  font-weight: 700;
+  position: relative; 
+  left: 0; 
+  text-align: left; 
+  z-index: 10;
+  top:92px;
+  width: auto;
+  left:10px;
 }
 
 
@@ -31,23 +45,12 @@
   width: 10%;
   height: 10%;
   position: absolute;
-  left: 50%;
-  top: 83%;
+  left: 57%;
+  top: 83.5%;
   overflow: visible;
 }
 
-.title {
-  color: #404040;
-  text-align: left;
-  font-family: "Inter-Bold", sans-serif;
-  font-size: 16px;
-  line-height: 21px;
-  font-weight: 700;
-  position: absolute;
-  left: 62%;
-  width: 40%;
-  bottom: 5px;
-}
+
 
 .description {
   color: #212121;
@@ -57,10 +60,10 @@
   line-height: 16px;
   font-weight: 500;
   position: absolute;
-  right: 31.29%;
-  left: 4.28%;
+  right: 38.29%;
+  left: 7%;
   width: 64.44%;
-  top: calc(50% - -19.5px);
+  top: calc(50% - -40.5px);
   height: 34.55px;
 }
 
@@ -72,3 +75,15 @@
   top: -4px;
   object-fit: cover;
 }
+.required-points {
+  color: #1c1c1c;  
+  font-size: 14px;
+  font-weight: 600;
+  position: absolute;
+  top: 83%;  
+  left: 85%;
+  transform: translateX(-50%);
+  text-align: center;
+  width: 60px;
+}
+
