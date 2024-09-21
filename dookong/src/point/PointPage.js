@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import './PointPage.css';
 import RewardItem from './RewardItem';
 import StoreCategory from './StoreCategory';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';  // Import useNavigate for navigation
+import AllPoint from '../components/AllPoint';  
 
 import groupIcon from '../assets/kong2.png';
 import back from '../assets/back.png';
@@ -41,23 +42,22 @@ const initialRewards = {
 const PointPage = ({ className = '', ...props }) => {
   const [selectedCategory, setSelectedCategory] = useState('전체');
   const [points, setPoints] = useState(4750); // Starting with 4750 points
+  const [showModal, setShowModal] = useState(false); // Control modal visibility
+  const navigate = useNavigate(); // Initialize navigate hook
 
   const handleCategoryClick = (category) => {
     setSelectedCategory(category);
   };
 
+  // Navigate to /map when "적립하러가기" is clicked
   const handleAddPoints = () => {
-    setPoints(prevPoints => prevPoints + 10);
+    navigate('/map');  // Navigate to the /map route
   };
 
   const renderRewardItems = () => {
     const rewards = initialRewards[selectedCategory] || [];
-    if (rewards.length === 0 && ['간식', '화장품'].includes(selectedCategory)) {
-      return (
-        <div className="coming-soon">
-          준비중입니다..
-        </div>
-      );
+    if (rewards.length === 0) {
+      return <div className="coming-soon">준비중입니다..</div>;
     }
 
     return rewards.map((reward, index) => (
@@ -73,8 +73,6 @@ const PointPage = ({ className = '', ...props }) => {
 
   return (
     <div className={`pointpage ${className}`} {...props}>
-
-      
       <div className="pointpage__header">
         <div className="pointpage__background"></div>
         <div className="pointpage__points-frame">
@@ -88,9 +86,10 @@ const PointPage = ({ className = '', ...props }) => {
           <div className="pointpage__button" onClick={handleAddPoints}>
             <div className="pointpage__button-text">적립하러가기</div>
           </div>
-          <div className="pointpage__button-secondary">
+          {/* Show the modal when this button is clicked */}
+          <button className="pointpage__button-secondary" onClick={() => setShowModal(true)}>
             <div className="pointpage__button-text">전체 내역</div>
-          </div>
+          </button>
         </div>
 
         {/* 알림 */}
@@ -103,7 +102,7 @@ const PointPage = ({ className = '', ...props }) => {
         <div className="pointpage__header-frame">
           <div className="pointpage__header-title">포인트</div>
           <Link to="/">
-          <img className="pointpage__back-vector" src={back} alt="Back Vector" />
+            <img className="pointpage__back-vector" src={back} alt="Back Vector" />
           </Link>
         </div>
       </div>
@@ -111,9 +110,7 @@ const PointPage = ({ className = '', ...props }) => {
       {/* 상점 */}
       <div className="pointpage__store-section">
         <div className="pointpage__store-title">🌱 두콩이네 상점 🌱</div>
-        <div className="pointpage__rewards-grid">
-          {renderRewardItems()}
-        </div>
+        <div className="pointpage__rewards-grid">{renderRewardItems()}</div>
         <div className="pointpage__categories">
           {categories.map((category, index) => (
             <StoreCategory
@@ -125,6 +122,9 @@ const PointPage = ({ className = '', ...props }) => {
           ))}
         </div>
       </div>
+
+      {/* AllPoint Modal */}
+      {showModal && <AllPoint showModal={showModal} onClose={() => setShowModal(false)} />}
     </div>
   );
 };
