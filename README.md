@@ -13,7 +13,7 @@
   <br></br>
 ## 팀원 소개
 <br>:rabbit: <b>최예윤 :</b> </br>
-<br>:cat: <b>박지현 :</b> </br>
+<br>:cat: <b>박지현 :</b>프론트엔드 00차 박지현입니다!</br>
 <br>:hamster: <b>최원아 :</b> </br>
 <br>:polar_bear: <b> 호예찬 :</b> </br>
 <br></br>
