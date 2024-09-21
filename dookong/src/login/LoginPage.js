@@ -5,11 +5,11 @@ import dookong from '../assets/dookong.png';
 
 export const LoginPage = ({ onLogin }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [username, setUsername] = useState('');
+  const [username, setUsername] = useState(''); // 로그인 ID (email)
   const [password, setPassword] = useState('');
-  const [signupUsername, setSignupUsername] = useState('');
+  const [signupUsername, setSignupUsername] = useState(''); // 별명
+  const [signupEmail, setSignupEmail] = useState(''); // 이메일 (ID)
   const [signupPassword, setSignupPassword] = useState('');
-  const [signupName, setSignupName] = useState('');
   const [loginError, setLoginError] = useState('');
   const navigate = useNavigate();
 
@@ -22,33 +22,55 @@ export const LoginPage = ({ onLogin }) => {
   };
 
   // 로그인 처리
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
 
-    const savedUsername = localStorage.getItem('username');
-    const savedPassword = localStorage.getItem('password');
-
-    // 입력한 아이디와 비밀번호가 로컬 스토리지에 저장된 값과 일치하는지 확인
-    if (username === savedUsername && password === savedPassword) {
-      onLogin(); // 로그인 성공
-      navigate('/'); // 메인 페이지로 이동
-    } else {
-      setLoginError('아이디 또는 비밀번호가 일치하지 않습니다.');
+    try {
+      const response = await fetch('/api/members/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email: username, password })
+      });
+      const data = await response.json();
+      if (response.ok) {
+        localStorage.setItem('userInfo', JSON.stringify(data)); // 로컬 스토리지에 사용자 정보 저장
+        onLogin(); // 로그인 상태 변경
+        navigate('/lank'); // 메인 페이지로 이동
+      } else {
+        setLoginError('아이디 또는 비밀번호가 일치하지 않습니다.');
+      }
+    } catch (error) {
+      console.error('로그인 실패:', error);
     }
   };
 
   // 회원가입 처리
-  const handleSignup = (e) => {
+  const handleSignup = async (e) => {
     e.preventDefault();
-    
-    // 로컬 스토리지에 아이디, 비밀번호, 이름 저장
-    localStorage.setItem('username', signupUsername); //아이디
-    localStorage.setItem('password', signupPassword); //비번
-    localStorage.setItem('name', signupName); // 이름
 
-    // 회원가입 완료 후 모달 닫기
-    closeModal();
-    alert('회원가입이 완료되었습니다! 이제 로그인하세요.');
+    try {
+      const response = await fetch('/api/members/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          username: signupUsername,
+          email: signupEmail,
+          password: signupPassword
+        })
+      });
+      if (response.ok) {
+        closeModal(); // 회원가입 모달 닫기
+        alert('회원가입이 완료되었습니다! 이제 로그인하세요.');
+      } else {
+        alert('회원가입 실패, 다시 시도해주세요.');
+      }
+    } catch (error) {
+      console.error('회원가입 처리 중 에러 발생:', error);
+    }
   };
 
   return (
@@ -58,19 +80,19 @@ export const LoginPage = ({ onLogin }) => {
       <img src={dookong} alt="Dookong Character" className="dookong-image" />
 
       <div className="input-container">
-        <input 
-          type="text" 
-          placeholder="이메일을 입력하세요" 
-          className="login-input" 
-          value={username} 
-          onChange={(e) => setUsername(e.target.value)} 
+        <input
+          type="text"
+          placeholder="아이디를 입력하세요"
+          className="login-input"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
         />
-        <input 
-          type="password" 
-          placeholder="비밀번호를 입력하세요" 
-          className="login-input" 
-          value={password} 
-          onChange={(e) => setPassword(e.target.value)} 
+        <input
+          type="password"
+          placeholder="비밀번호를 입력하세요"
+          className="login-input"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
         />
       </div>
 
@@ -85,32 +107,31 @@ export const LoginPage = ({ onLogin }) => {
           <div className="modal">
             <h2>🪴 회원가입 🪴</h2>
             <form onSubmit={handleSignup}>
-              <input 
-                type="text" 
-                placeholder="이름(별명)을 입력하세요 ☺️" 
-                className="modal-input" 
-                value={signupName} 
-                onChange={(e) => setSignupName(e.target.value)} 
-              />
-              <input 
-                type="text" 
-                placeholder="이메일을 입력하세요" 
-                className="modal-input" 
+              <input
+                type="text"
+                placeholder="이름(별명)을 입력하세요 ☺️"
+                className="modal-input"
                 value={signupUsername}
                 onChange={(e) => setSignupUsername(e.target.value)}
               />
-              <input 
-                type="password" 
-                placeholder="비밀번호를 입력하세요" 
-                className="modal-input" 
+              <input
+                type="text"
+                placeholder="메일을 입력하세요"
+                className="modal-input"
+                value={signupEmail}
+                onChange={(e) => setSignupEmail(e.target.value)}
+              />
+              <input
+                type="password"
+                placeholder="비밀번호를 입력하세요"
+                className="modal-input"
                 value={signupPassword}
                 onChange={(e) => setSignupPassword(e.target.value)}
               />
-              
+
               <button className="modal-button" type="submit">회원가입</button>
-              <button className="modal-button" type="button" onClick={closeModal}>닫기</button>
             </form>
-            
+            <button className="modal-close-button" onClick={closeModal}>닫기</button>
           </div>
         </div>
       )}
@@ -119,4 +140,3 @@ export const LoginPage = ({ onLogin }) => {
 };
 
 export default LoginPage;
-
