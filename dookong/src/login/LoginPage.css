@@ -130,9 +130,9 @@ body {
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
-  width: 100%; /* 버튼을 전체 너비로 설정 */
+  width: 90%; /* 버튼을 전체 너비로 설정 */
   max-width: 280px;
-  margin-bottom: 15px;
+  margin-bottom: 0px;
 }
 
 .modal-ok-button:hover {
@@ -142,17 +142,18 @@ body {
 /* 취소 버튼 스타일 */
 .modal-close-button {
   padding: 10px 20px;
-  background-color: #ff5c5c; /* 취소 버튼 배경색 (빨강) */
-  color: white;
+  background-color: #ffffff; /* 취소 버튼 배경색 (빨강) */
+  color: #538f74;
   border: none;
   border-radius: 10px;
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
-  width: 100%; /* 버튼을 전체 너비로 설정 */
+  width: 90%; /* 버튼을 전체 너비로 설정 */
   max-width: 280px;
+  border: 1.5px solid #6BA084;
 }
 
 .modal-close-button:hover {
-  background-color: #cc4949; /* hover 시 색상 변경 */
+  background-color: #466d63; /* hover 시 색상 변경 */
 }

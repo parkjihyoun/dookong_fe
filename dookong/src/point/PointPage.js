@@ -5,6 +5,7 @@ import StoreCategory from './StoreCategory';
 import { Link, useNavigate } from 'react-router-dom';
 import groupIcon from '../assets/kong2.png';
 import backVector from '../assets/vector.svg';
+import kong from '../assets/kong.png';
 
 const categories = ['전체', '🔥HOT', '편의점', '간식', '화장품'];
 
@@ -108,9 +109,11 @@ const PointPage = ({ className = '', ...props }) => {
           <div className="pointpage__button" onClick={handleAddPoints}>
             <div className="pointpage__button-text">적립하러가기</div>
           </div>
+          <Link to="/allpoint">
           <div className="pointpage__button-secondary">
             <div className="pointpage__button-text">전체 내역</div>
           </div>
+          </Link>
         </div>
 
         <div className="pointpage__info-text">
@@ -118,9 +121,12 @@ const PointPage = ({ className = '', ...props }) => {
         </div>
 
         <div className="pointpage__header-frame">
-          <div className="pointpage__header-title">포인트</div>
           <Link to="/">
             <img className="pointpage__back-vector" src={backVector} alt="Back Vector" />
+          </Link>
+          <div className="pointpage__header-title">포인트</div>
+          <Link to="/my">
+            <img className="pointpage__point-vector" src={kong} alt="Point Vector" />
           </Link>
         </div>
       </div>
