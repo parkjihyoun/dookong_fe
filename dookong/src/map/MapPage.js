@@ -148,7 +148,7 @@ function SearchBar({ map, places, markers, setMarkers, isApiReady }) {
 }
 
 const Header = () => (
-  <header>
+  <div className="mapheader">
     <Link to="/" className="header-back">
       <img src={back} alt="back" />
     </Link>
@@ -156,7 +156,7 @@ const Header = () => (
     <Link to="/my" className="header-point">
       <img src={kong} alt="kong" />
     </Link>
-  </header>
+  </div>
 );
 
 function MapPage() {

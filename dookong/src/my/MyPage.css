@@ -6,23 +6,24 @@ body {
 }
 
 .my-container {
-    background-color: #fff;
+    background-color: #ffffff;
     width: 100vw;
-    height:100vh;
+    height: 100vh;
     margin: 0;
     padding: 0;
     border: none;
-    width: 393px;
+    max-width: 393px;
 }
 
 /*상단바*/
 
-header {
+.myheader {
     background-color: #fff;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 20px;
+    margin: 0px 20px;
+    padding-top: 20px;
 }
 
 .header-back {

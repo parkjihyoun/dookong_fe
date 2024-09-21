@@ -84,7 +84,7 @@ function MainPage() {
           </div>
         </div>
 
-        <div className="points-section">
+        <div className="mainpoints-section">
           <div className="kong-section">
             <img src={plantImg} alt="Plant" />
             <h3>누적 포인트</h3>
