@@ -3,7 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import './ManMain.css'; // 외부 CSS 파일 불러오기
 import dookongImg from '../assets/dookong.png'; // 이미지 경로 import
 import plantImg from '../assets/plant.png';
-import cameraImg from '../assets/camera.png';
+import manpointImg from '../assets/manpoint.png';
+import arrowImg from '../assets/arrow.png';
 
 function ManMain() {
   const [manClicked, setManClicked] = useState(false); // useState 이름 변경
@@ -17,6 +18,7 @@ function ManMain() {
     setTimeout(() => {
       setManClicked(false);
     }, 200); // 200 밀리초 후에 다시 원래 상태로
+    
   };
 
   return (
@@ -38,8 +40,18 @@ function ManMain() {
           </div>
             <p className="manpoints">관리자 페이지</p>
         </div>
-
-          <h1>완두콩 모으러 가기</h1>
+        <div className="manpoints-section2">
+        <img 
+            src={manpointImg} 
+            alt="manpoint" 
+            className={manClicked ? 'clicked' : ''} // 클릭 상태에 따라 클래스 적용
+            onClick={handleManImageClick} // 클릭 이벤트 핸들러 추가
+          />
+          </div>
+          <div className="manpoints-section3">
+            <img src={arrowImg} alt='arrow'></img>
+            <h1>포인트 관리</h1>
+          </div>
       </div>
     </div>
   );
