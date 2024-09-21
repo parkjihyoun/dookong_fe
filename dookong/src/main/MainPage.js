@@ -95,17 +95,18 @@ function MainPage() {
         </footer>
       </div>
       <div style={{ margin: '20px' }}>
-        <button onClick={goToQaPage} style={buttonStyle}>
+        <button onClick={goToQaPage} >
           고객센터
         </button>
       </div>
       <div style={{ margin: '20px' }}>
-        <button onClick={goToMapPage} style={buttonStyle}>
+        <button onClick={goToMapPage} >
           지도
         </button>
       </div>
     </div>
   );
+}
 }
 
 export default MainPage;

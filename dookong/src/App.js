@@ -45,34 +45,26 @@ function App() {
   return (
     <Router>
       <Routes>
-      <Route path="/" element={<MainPage />} />
+      
        <Route path="/addItem" element = {<AddItem/>} />
        <Route path="/trashcheck" element = {<ModalCheck/>} />
-
         <Route path="/CheckPage" element={isAuthenticated ? <CheckPage onLogout={handleLogout} /> : <ModalLog />}  />
-        <Route path="/my" element={isAuthenticated ? <MyPage onLogout={handleLogout} /> : <ModalLog />}  />
-        <Route path="/qa" element={isAuthenticated ? <QaPage onLogout={handleLogout} /> : <ModalLog />}  />
         <Route path="/Notice1" element={isAuthenticated ? <Notice1 onLogout={handleLogout} /> : <ModalLog />}  />
         <Route path="/Notice2" element={isAuthenticated ? <Notice2 onLogout={handleLogout} /> : <ModalLog />}  />
         <Route path="/Mail" element={isAuthenticated ? <Mail onLogout={handleLogout} /> : <ModalLog />}  />
-        <Route path="/Map" element={isAuthenticated ? <MapPage onLogout={handleLogout} /> : <ModalLog />}  />
-        
 
-        <Route 
-          path="/lank" 
-          element={isAuthenticated ? <LankPage onLogout={handleLogout} /> : <ModalLog />} 
-        />
-        <Route s
-          path="/point" 
-          element={isAuthenticated ? <PointPage onLogout={handleLogout} /> : <ModalLog />} 
-        />
+        {/*기본 페이지*/}
+        <Route path="/" element={<MainPage />} />
 
-        <Route 
-          path="/login" 
-          element={<LoginPage onLogin={handleLogin} />} 
-        />
+        <Route path="/my" element={isAuthenticated ? <MyPage onLogout={handleLogout} /> : <ModalLog />}  />
+        <Route path="/qa" element={isAuthenticated ? <QaPage onLogout={handleLogout} /> : <ModalLog />}  />
+        <Route path="/map" element={isAuthenticated ? <MapPage onLogout={handleLogout} /> : <ModalLog />}  />
+        <Route path="/lank" element={isAuthenticated ? <LankPage onLogout={handleLogout} /> : <ModalLog />} />
+        <Route path="/point" element={isAuthenticated ? <PointPage onLogout={handleLogout} /> : <ModalLog />} />
+        <Route path="/login" element={<LoginPage onLogin={handleLogin} />} />
+
         {/* 로그인 페이지로 이동 */}
-        <Route path="*" element={<Navigate to={isAuthenticated ? '/lank' : '/login'} />} />
+        <Route path="*" element={<Navigate to={isAuthenticated ? '/' : '/login'} />} />
 
       </Routes>
     </Router>

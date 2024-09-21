@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import './QaPage.css';
 import { Link } from 'react-router-dom';
 
-import back from '../assets/back.png'
-import kong from '../assets/kong.png'
-import noticeimg from '../assets/notice.png'
-import qnaimg from '../assets/qna.png'
+import back from '../assets/back.png';
+import kong from '../assets/kong.png';
+import noticeimg from '../assets/notice.png';
+import qnaimg from '../assets/qna.png';
 
 const Header = () => (
     <header>
@@ -13,17 +13,10 @@ const Header = () => (
         <img src={back} alt="back" />
     </Link>
     <div className="header-title">고객센터</div>
-
-    <a href="/" className="header-point">
-      <img src={kong} alt="kong" />
-    </a>
-  </header>
-
     <Link to="/point" className="header-point">
         <img src={kong} alt="kong" />
     </Link>
 </header>
-
 );
 
 const NoticeItem = ({ link, title, date }) => (
