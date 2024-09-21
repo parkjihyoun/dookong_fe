@@ -45,7 +45,7 @@ function MainPage() {
   };
 
   return (
-    <div className="container">
+    <div className="main-container">
       <div className="main-content">
         <div className="hi">
           <div className="hi-text">
@@ -88,24 +88,12 @@ function MainPage() {
           <div className="footer-icons">
             <img onClick={goToMyPage} src={personImg} alt="personImg" />
             <img onClick={goToPointPage} src={coinImg} alt="coinImg" />
-            <img src={gpsImg} alt="gpsImg" />
+            <img onClick={goToMapPage} src={gpsImg} alt="gpsImg" />
             <img onClick={goToLankPage} src={stairImg} alt="stairImg" />
             <img onClick={goToQaPage} src={questionImg} alt="questionImg" />
           </div>
         </footer>
       </div>
-
-      <div style={{ margin: '20px' }}>
-        <button onClick={goToQaPage} >
-          고객센터
-        </button>
-      </div>
-      <div style={{ margin: '20px' }}>
-        <button onClick={goToMapPage} >
-          지도
-        </button>
-      </div>
-
     </div>
   );
 }

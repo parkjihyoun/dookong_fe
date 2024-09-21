@@ -7,15 +7,14 @@ body {
 }
 
 /* 반응형 페이지 레이아웃 */
-.container {
+.map-container {
   background-color: #fff;
-  margin: 0 auto; /* 가운데 정렬 */
+  width: 100vw;
+  height:100vh;
+  margin: 0;
   padding: 0;
-  
-  max-width: 393px; /* 고정된 최대 너비 */
-  position: relative;
-  z-index: 1;
-  box-sizing: border-box; /* 패딩을 포함한 너비 계산 */
+  border: none;
+  width: 393px;
 }
 
 /* 지도 스타일 */
@@ -29,28 +28,27 @@ body {
 
 /* 헤더 스타일 */
 header {
-  background-color: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center; /* 중앙에 배치 */
-  position: relative;
-  padding: 10px; /* margin 대신 padding 사용 */
-  z-index: 2;
-  margin-top: 10px;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
 }
 
 .header-back {
-  position: absolute;
-  left: 0px; /* 고정된 위치에서 여백 추가 */
-  top: 50%;
-  transform: translateY(-50%); /* 수직 중앙 정렬 */
+  margin-top: 20px;
+  cursor: pointer;
 }
 
 .header-title {
   font-size: 23px;
   font-weight: 700;
-  
-  transform: translateY(20%);
+  margin-top: 20px;
+}
+
+.header-point {
+  margin-top: 20px;
+  cursor: pointer;
 }
 
 /* 검색 창 컨테이너 */
@@ -93,6 +91,12 @@ header {
   height: 20px;
 }
 
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
 /* 반응형 스타일 */
 @media (max-width: 1170px) {
   /* 아이폰 13 프로와 같은 해상도 가정 */
@@ -107,15 +111,4 @@ header {
   .search-bar input, .search-bar button {
     font-size: 14px; /* 조금 더 작은 텍스트 크기 설정 */
   }
-}
-
-
-.center-container img {
-  width: 45px;
-  height:45px;
-  position: absolute;
-  right: 0px; /* 고정된 위치에서 여백 추가 */
-  top: 50%;
-  transform: translateY(-20%);
-
 }

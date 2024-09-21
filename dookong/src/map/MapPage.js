@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import searchIcon from '../assets/search.png';
 import { Link } from 'react-router-dom';
 import back from '../assets/back.png';
+import kong from '../assets/kong.png';
 import './MapPage.css';
 import cameraImg from '../assets/camera.png';
 
@@ -143,25 +144,28 @@ function SearchBar({ map, places, markers, setMarkers, isApiReady }) {
 
 const Header = () => (
   <header>
-    <Link to="/" className="header-back">
+    <Link to="/my" className="header-back">
       <img src={back} alt="back" />
     </Link>
     <div className="header-title">지도</div>
-    <div className="center-container">  {/* 부모 컨테이너에 className 적용 */}
-      <Link to="/trashcheck">
-        <img src={cameraImg} alt="Camera" />
-      </Link>
-    </div>
+    <Link to="/point" className="header-point">
+      <img src={kong} alt="kong" />
+    </Link>
   </header>
 );
 
 function MapPage() {
   return (
-    <div className="container">
+    <div className="map-container">
       <Header />
       <div className="map-page">
         <KakaoMap />
       </div>
+      <footer className="footer-icons">
+        <Link to="/trashcheck">
+          <img src={cameraImg} alt="Camera" />
+        </Link>
+      </footer>
     </div>
   );
 }
