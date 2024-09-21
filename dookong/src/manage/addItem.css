@@ -1,5 +1,27 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #fff;
+}
+
+.admin-page {
+
+  background-color: #fff;
+    width: 100vw;
+    height:100vh;
+    margin: 0;
+    padding: 0;
+    border: none;
+    width: 393px;
+
+    h2 {
+      padding-left: 20px;
+    }
+}
+
 .additem {
-    max-width: 600px;
+    max-width: 300px;
     margin-top: 20px;
     padding: 20px;
     background-color: #f7f7f7;
@@ -9,6 +31,7 @@
   
   .additem h2 {
     text-align: center;
+    margin-left: -50px;
     margin-bottom: 20px;
     font-size: 1.8rem;
     color: #333;
@@ -16,7 +39,13 @@
   
   .admin-form {
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
+
+    div {
+      width: 80%;
+    }
   }
   
   .form-group {
@@ -45,7 +74,7 @@
   }
   
   .form-group textarea {
-    resize: vertical;
+    resize: none;
     height: 100px;
   }
   
@@ -60,7 +89,6 @@
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    margin-left:20px;
     transition: background-color 0.3s ease;
   }
   
