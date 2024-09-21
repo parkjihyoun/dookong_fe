@@ -1,27 +1,31 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
-import LankPage from './lank/LankPage';
-import PointPage from './point/PointPage';
+
+
 import LoginPage from './login/LoginPage';
-import ModalLog from './components/ModalLog'; 
-import AddItem from './manage/addItem';
+import MainPage from './main/MainPage';
 import MyPage from './my/MyPage';
+import PointPage from './point/PointPage';
+import MapPage from './map/MapPage';
+import LankPage from './lank/LankPage';
 import QaPage from './qa/QaPage';
+
+
+import ModalLog from './components/ModalLog'; 
+import ModalCheck from './components/ModalCheck';
+
 import ImgCheck from './manage/ImgCheck';
 import CheckPage from './manage/CheckPage';
 import AllPoint from './components/AllPoint';
+
 import Notice1 from './qa/Notice1';
 import Notice2 from './qa/Notice2';
 import Mail from './qa/Mail';
 
-import ModalCheck from './components/ModalCheck';
-import MainPage from './main/MainPage';
-
 import ManMain from './manage/ManMain';
-
-
-
-import MapPage from './map/MapPage';
+import CheckPage from './manage/CheckPage';
+import ImgCheck from './manage/ImgCheck';
+import AddItem from './manage/addItem';
 
 
 function App() {
@@ -48,12 +52,14 @@ function App() {
   return (
     <Router>
       <Routes>
+
       <Route path="/checkimg" element={<ImgCheck />} />
       <Route path="/allpoint" element={<AllPoint showModal={true} onClose={() => {}} />} />
 
        <Route path="/ManMain" element={<ManMain />} />
        <Route path="/addItem" element = {<AddItem/>} />
        <Route path="/trashcheck" element = {<ModalCheck/>} />
+
         <Route path="/CheckPage" element={isAuthenticated ? <CheckPage onLogout={handleLogout} /> : <ModalLog />}  />
         <Route path="/Notice1" element={isAuthenticated ? <Notice1 onLogout={handleLogout} /> : <ModalLog />}  />
         <Route path="/Notice2" element={isAuthenticated ? <Notice2 onLogout={handleLogout} /> : <ModalLog />}  />

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom'; // useNavigate 추가
+import { Link, useNavigate } from 'react-router-dom';
 import './MainPage.css'; 
-import dookongImg from '../assets/dookong.png'; // 이미지 경로 import
+import dookongImg from '../assets/dookong.png';
 import plantImg from '../assets/plant.png';
 import cameraImg from '../assets/camera.png';
 import personImg from '../assets/person.png';

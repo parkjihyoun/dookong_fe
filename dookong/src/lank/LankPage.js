@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import "./LankPage.css";
 import profileImg from "../assets/profile.png";
+import back from "../assets/back.png";
 import kong from "../assets/kong.png";
 import medal2 from "../assets/medal2.png";
 import medal1 from "../assets/medal1.png";
 import medal3 from "../assets/medal3.png";
+import { Link } from "react-router-dom";  
 import vector0 from "../assets/vector.svg";
-import { Link } from "react-router-dom";
+
 
 export const LankPage = ({ className, ...props }) => {
   const [topRankings, setTopRankings] = useState([]);
@@ -48,7 +50,7 @@ export const LankPage = ({ className, ...props }) => {
     <div className={`lankpage ${className}`}>
       <div className="ranking-header">
         <Link to="/">
-          <img src={vector0} alt="vector" className="vector-icon" />
+          <img src={back} alt="back" className="back-icon" />
         </Link>
 
           <h2>랭킹</h2>

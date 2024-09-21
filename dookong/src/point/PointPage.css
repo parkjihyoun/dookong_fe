@@ -144,28 +144,39 @@ body {
 
 /* Header Frame */
 .pointpage__header-frame {
-    background-color: #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 20px;
+  background-color: #cde5c5;
+  display: flex;
+  justify-content: space-between; /* Align items on both ends */
+  align-items: center;
+  margin: 20px;
+  margin-left: 9px;
+  position: relative;
+  height: 53px; /* Adjust height for alignment */
 }
 
 .pointpage__header-title {
   text-align: center;
   font-size: 23px;
   font-weight: 700;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 35px;
-
+  position: relative;
+  left: 0;
+  margin: 95px;
 }
 
 .pointpage__back-vector {
-  position: absolute;
-  top: 35px;
   cursor: pointer;
+  position: relative;
+  top: 0;
+  left: 0;
+  margin-right: 20px; /* Align to the left */
+}
+
+.pointpage__point-vector {
+  cursor: pointer;
+  position: relative;
+  top: 0;
+  right: 0;
+  margin-left: 20px; /* Align to the right */
 }
 
 /* Store Section */
@@ -175,7 +186,7 @@ body {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  top: 320px;
+  top: 330px;
 }
 
 .pointpage__store-title {

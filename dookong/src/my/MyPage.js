@@ -92,6 +92,15 @@ export const MyPage = () => {
     setMonthlyPoints(monthlyPoints + 10);
   };
 
+  // 로그아웃 함수 추가
+  const handleLogout = () => {
+    // localStorage에서 사용자 정보 제거
+    localStorage.removeItem('userInfo');
+  
+    // 로그아웃 후 홈 페이지로 리디렉션
+    navigate('/login');
+  };
+
   return (
     <div className="my-container">
       {/* 상단바 */}
@@ -116,7 +125,7 @@ export const MyPage = () => {
             <p id="profile-id">{userId}</p>
           </div>
 
-          <button className="logouticon" onClick={openEditModal}>
+          <button className="logouticon" onClick={handleLogout}>
             <img src={logouticon} alt="logouticon" />
           </button>
         </div>
