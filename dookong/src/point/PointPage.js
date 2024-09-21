@@ -2,31 +2,14 @@ import React, { useState, useEffect } from 'react';
 import './PointPage.css';
 import RewardItem from './RewardItem';
 import StoreCategory from './StoreCategory';
-
 import { Link, useNavigate } from 'react-router-dom';
 import groupIcon from '../assets/kong2.png';
 import backVector from '../assets/vector.svg';
-
-
-import AllPoint from '../components/AllPoint';  
-
-
-import back from '../assets/back.png';
-import group1 from '../assets/kong1.svg';
-import group2 from '../assets/kong1.svg';
-import group3 from '../assets/kong1.svg';
-import group4 from '../assets/kong1.svg';
-
-import cuImage from '../assets/cu.png';
-import naverImage from '../assets/naver.png';
-import lotteImage from '../assets/lotte.png';
-import gs25Image from '../assets/gs25.png';
 
 const categories = ['전체', '🔥HOT', '편의점', '간식', '화장품'];
 
 const PointPage = ({ className = '', ...props }) => {
   const [selectedCategory, setSelectedCategory] = useState('전체');
-
   const [points, setPoints] = useState(0); // Default to 0 points initially
   const [rewards, setRewards] = useState({
     전체: [],
@@ -87,20 +70,17 @@ const PointPage = ({ className = '', ...props }) => {
     }
   }, [memberId]);
 
-
   const handleCategoryClick = (category) => {
     setSelectedCategory(category);
   };
 
-  // Navigate to /map when "적립하러가기" is clicked
   const handleAddPoints = () => {
-
     setPoints((prevPoints) => prevPoints + 10);
   };
 
   const renderRewardItems = () => {
     const rewardsInCategory = rewards[selectedCategory] || [];
-    if (rewards.length === 0) {
+    if (rewardsInCategory.length === 0 && ['간식', '화장품'].includes(selectedCategory)) {
       return <div className="coming-soon">준비중입니다..</div>;
     }
 
@@ -128,24 +108,19 @@ const PointPage = ({ className = '', ...props }) => {
           <div className="pointpage__button" onClick={handleAddPoints}>
             <div className="pointpage__button-text">적립하러가기</div>
           </div>
-          {/* Show the modal when this button is clicked */}
-          <button className="pointpage__button-secondary" onClick={() => setShowModal(true)}>
+          <div className="pointpage__button-secondary">
             <div className="pointpage__button-text">전체 내역</div>
-          </button>
+          </div>
         </div>
 
         <div className="pointpage__info-text">
-          포인트는 스토어에서 <br />
-          현금처럼 사용할 수 있습니다.
+          포인트는 스토어에서 현금처럼 사용할 수 있습니다.
         </div>
 
         <div className="pointpage__header-frame">
           <div className="pointpage__header-title">포인트</div>
-
           <Link to="/">
-
             <img className="pointpage__back-vector" src={backVector} alt="Back Vector" />
-
           </Link>
         </div>
       </div>
@@ -164,9 +139,6 @@ const PointPage = ({ className = '', ...props }) => {
           ))}
         </div>
       </div>
-
-      {/* AllPoint Modal */}
-      {showModal && <AllPoint showModal={showModal} onClose={() => setShowModal(false)} />}
     </div>
   );
 };
