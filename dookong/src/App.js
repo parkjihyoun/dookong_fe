@@ -16,7 +16,7 @@ import Mail from './qa/Mail';
 
 import ModalCheck from './components/ModalCheck';
 import MainPage from './main/MainPage';
-
+import ManMain from './manage/ManMain';
 
 
 
@@ -44,7 +44,8 @@ function App() {
   return (
     <Router>
       <Routes>
-      <Route path="/" element={<MainPage />} />
+       <Route path="/" element={<MainPage />} />
+       <Route path="/ManMain" element={<ManMain />} />
        <Route path="/addItem" element = {<AddItem/>} />
        <Route path="/trashcheck" element = {<ModalCheck/>} />
 
