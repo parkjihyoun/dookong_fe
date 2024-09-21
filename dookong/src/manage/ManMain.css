@@ -1,0 +1,145 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial';
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    max-width: 393px;
+    width: 100%;
+    margin: 0 auto;
+    border: 1px solid #e0e0e0;
+    overflow: hidden;
+    padding: 20px;
+    position: relative;
+    border-radius: 12px; /* Rounded corners */
+}
+
+/* Header */
+
+.hi {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.hi-text {
+    text-align: center;
+    width: 100%;
+}
+
+.hi-text h1 {
+    font-size: 16px;
+    color: #868686;
+    margin-bottom: -30px;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.hi-text h2 {
+    font-size: 50px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.hi-img img {
+    width: 238px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* manPoints Section */
+
+
+.manpoints-section {
+    background-color: #F9F5D1; /* 노란 박스 */
+    padding: 0px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* 가운데 정렬 */
+    text-align: center; /* 텍스트 가운데 정렬 */
+}
+
+.mankong-section img {
+    width: 40px;
+    height: auto;
+    margin-bottom: -2px;
+    margin-left: 10px;
+    margin-right: -25px;
+}
+
+.mankong-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* 텍스트와 이미지를 세로로 정렬 */
+}
+
+.manpoints {
+    font-size: 33px;
+    font-weight: bold;
+    margin-right: 10px;
+    margin-left: 40px;
+    margin-bottom: 0;
+    padding-bottom: 30px;
+    color: #FF0000 ; /* 중요도를 높여 빨간색으로 설정 */
+}
+
+
+
+
+
+/* Tree Section */
+
+.mantree-section {     /* 당신은~살렸어요! */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mantree2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #6BAA51;
+    font: Alkatra;
+    margin-left: 10px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+.mantree-status {
+    font-size: 14px;
+    color: #888;
+}
+
+/* Camera Section */
+
+.camera-section {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.camera-section h1 {
+    font-size: 14px;
+    color: #7E7E7E;
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+
+.camera-section img {
+    transition: opacity 0.3s ease;
+}
+
+.camera-section img.clicked {
+    opacity: 0.5;
+}
+

@@ -1,23 +1,18 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Arial';
-    background-color: #f5f5f5;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    font-family: 'Arial', sans-serif;
+    background-color: #fff;
+
 }
 
 .container {
     background-color: #fff;
-    max-width: 393px;
-    width: 100%;
-    margin: 0 auto;
-    border: 1px solid #e0e0e0;
-    overflow: hidden;
-    padding: 20px;
-    position: relative;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    border: none;
+    width: 393px;
 }
 
 /*head*/
@@ -92,6 +87,7 @@ body {
     font-weight: bold;
     color: #313131;
     margin-right: 10px;
+    margin-left: -10px;
     margin-bottom: 5px;
     margin-top: 5px;
 }

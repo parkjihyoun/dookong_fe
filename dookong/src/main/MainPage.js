@@ -32,6 +32,10 @@ function MainPage() {
     navigate('/qa');
   };
 
+  const goToMapPage = () => {
+    navigate('/map');
+  }; // Closed this function correctly now.
+
   const handleImageClick = () => {
     setClicked(true);
 
@@ -83,9 +87,10 @@ function MainPage() {
         <footer>
           <div className="footer-icons">
             <img onClick={goToMyPage} src={personImg} alt="personImg" />
-            <img onClick={goToQaPage} src={questionImg} alt="questionImg" />
             <img onClick={goToPointPage} src={coinImg} alt="coinImg" />
+            <img src={gpsImg} alt="gpsImg" />
             <img onClick={goToLankPage} src={stairImg} alt="stairImg" />
+            <img onClick={goToQaPage} src={questionImg} alt="questionImg" />
           </div>
         </footer>
       </div>
