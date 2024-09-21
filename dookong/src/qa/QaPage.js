@@ -8,18 +8,15 @@ import noticeimg from '../assets/notice.png';
 import qnaimg from '../assets/qna.png';
 
 const Header = () => (
-    <header>
-    <Link to="/" className="header-back">
-        <img src={back} alt="back" />
-    </Link>
-    <div className="header-title">고객센터</div>
-
-
-
-    <Link to="/my" className="header-point">
-        <img src={kong} alt="kong" />
-    </Link>
-</header>
+    <div className="qaheader">
+      <Link to="/" className="qaheader-back">
+          <img src={back} alt="back" />
+      </Link>
+      <div className="qaheader-title">고객센터</div>
+      <Link to="/my" className="qaheader-point">
+          <img src={kong} alt="kong" />
+      </Link>
+    </div>
 
 );
 

@@ -8,7 +8,7 @@ body {
 
 
 /* Point Page Container */
-.pointpage {
+.pointpagee {
   background: #ffffff;
   width: 100vw;
   height:100vh;
@@ -18,7 +18,7 @@ body {
 
 /* Header Section */
 .pointpage__header {
-  width: 396px;
+  width: 393px;
   height: 329px;
   position: relative;
   margin: 0 auto;
@@ -115,6 +115,7 @@ body {
   width: 173px;
   height: 45px;
   box-sizing: border-box;
+  text-decoration: none;
 }
 
 .pointpage__button-text {
@@ -124,6 +125,11 @@ body {
   font-weight: 600;
   text-align: center;
   flex: 1;
+}
+
+.pointpage__button-secondary a {
+  text-decoration: none; /* 링크 밑줄 제거 */
+  color: inherit; /* 부모 요소의 색상 상속 */
 }
 
 /* Informational Text */
@@ -151,7 +157,7 @@ body {
   margin: 20px;
   margin-left: 9px;
   position: relative;
-  height: 53px; /* Adjust height for alignment */
+  height: 75px; /* Adjust height for alignment */
 }
 
 .pointpage__header-title {
@@ -176,7 +182,7 @@ body {
   position: relative;
   top: 0;
   right: 0;
-  margin-left: 20px; /* Align to the right */
+  margin-left: 17px; /* Align to the right */
 }
 
 /* Store Section */

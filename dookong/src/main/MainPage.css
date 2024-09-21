@@ -53,7 +53,7 @@ body {
 
 /*point*/
 
-.points-section {
+.mainpoints-section {
     background-color: #F9F5D1;
     padding: 10px;
     padding-left: 30px;
@@ -63,21 +63,21 @@ body {
     margin-right: 20px;
     display: flex;
     align-items: center;
-    margin-top: -20px;
+    margin-top: -10px;
 }
 
 .kong-section {
-    margin-right: 60px;
+    margin-right: 20px;
 }
 
-.points-section h3 {    
+.mainpoints-section h3 {    
     font-size: 14px;
     color: #7E7E7E;
     margin-bottom: 10px;
     margin-top: 5px;
 }
 
-.points-section img {   
+.mainpoints-section img {   
     margin-left: 10px;
     margin-top: 10px;
 }
@@ -92,7 +92,7 @@ body {
     font-weight: bold;
     color: #313131;
     margin-right: 10px;
-    margin-left: -30px;
+    margin-left: 0px;
     margin-bottom: 5px;
     margin-top: 5px;
 }
@@ -129,13 +129,13 @@ body {
 .camera-section {
     text-align: center;
     width: 100%;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .camera-section h1 {
     font-size: 14px;
     color: #7E7E7E;
-    margin-bottom: 0px;
+    margin-bottom: 10px;
 }
 
 .camera-section img {
@@ -154,7 +154,7 @@ footer {
     padding: 25px;
     border-top: 0.8px solid #CDE5C5;
     margin-bottom: 5px;
-    margin-top: -15px;
+    margin-top: 15px;
 }
 
 .main-footer-icons {

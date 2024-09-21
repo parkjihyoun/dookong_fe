@@ -116,7 +116,7 @@ export const MyPage = () => {
   return (
     <div className="my-container">
       {/* 상단바 */}
-      <header>
+      <div className="myheader">
         <Link to="/" className="header-back">
           <img src={back} alt="back" />
         </Link>
@@ -124,7 +124,7 @@ export const MyPage = () => {
         <Link to="/my" className="header-point">
           <img src={kong} alt="kong" />
         </Link>
-      </header>
+      </div>
 
       <div className="my-content">
         {/* 프로필 */}

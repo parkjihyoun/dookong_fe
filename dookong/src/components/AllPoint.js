@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom'; // useNavigate 훅 import
 import './AllPoint.css';
 
 function AllPoint({ showModal, onClose }) {
   const [pointsData, setPointsData] = useState({ earned: [], used: [] });
+  const navigate = useNavigate(); // useNavigate 훅 사용
 
   // API를 통해 로그인된 유저의 포인트 사용 내역 가져오기
   useEffect(() => {
@@ -41,8 +43,9 @@ function AllPoint({ showModal, onClose }) {
   }, []);
 
   const handleCloseModal = (e) => {
-    if (e.target.className === 'modal-overlay') {
+    if (e.target === e.currentTarget) {
       onClose();
+      navigate('/point'); // 모달이 닫힐 때 /point로 이동
     }
   };
 
@@ -87,7 +90,10 @@ function AllPoint({ showModal, onClose }) {
           </div>
         </div>
 
-        <button className="modal-close-btn" onClick={onClose}>
+        <button className="modal-close-btn" onClick={() => {
+          onClose();
+          navigate('/point'); 
+        }}>
           닫기
         </button>
       </div>

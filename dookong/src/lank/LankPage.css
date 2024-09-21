@@ -27,17 +27,18 @@ body {
   .ranking-header h2 {
     font-size: 23px;
     font-weight: 700;
-    margin-top: 30px;
+    margin-top: 40px;
   }
   
   .back-icon {
-    margin-top: 15px;
+    margin-top: 25px;
     cursor: pointer;
   }
 
   .point-icon {
-    margin-top: 15px;
+    margin-top: 25px;
     cursor: pointer;
+    margin-right: 2px;
   }
   
   

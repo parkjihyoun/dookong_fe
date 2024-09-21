@@ -138,9 +138,13 @@ const PointPage = ({ className = '', ...props }) => {
         </div>
 
         <div className="pointpage__actions">
-          <div className="pointpage__button">
+
+          
+          <Link to="/map">
+          <div className="pointpage__button" >
             <div className="pointpage__button-text">적립하러가기</div>
           </div>
+          </Link>
           <Link to="/allpoint">
             <div className="pointpage__button-secondary">
               <div className="pointpage__button-text">전체 내역</div>

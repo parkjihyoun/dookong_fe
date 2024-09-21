@@ -37,7 +37,7 @@ export const LoginPage = ({ onLogin }) => {
       if (response.ok) {
         localStorage.setItem('userInfo', JSON.stringify(data)); // 로컬 스토리지에 사용자 정보 저장
         onLogin(); // 로그인 상태 변경
-        navigate('/lank'); // 메인 페이지로 이동
+        navigate('/'); // 메인 페이지로 이동
       } else {
         setLoginError('아이디 또는 비밀번호가 일치하지 않습니다.');
       }
