@@ -109,9 +109,11 @@ const PointPage = ({ className = '', ...props }) => {
           <div className="pointpage__button" onClick={handleAddPoints}>
             <div className="pointpage__button-text">적립하러가기</div>
           </div>
+          <Link to="/allpoint">
           <div className="pointpage__button-secondary">
             <div className="pointpage__button-text">전체 내역</div>
           </div>
+          </Link>
         </div>
 
         <div className="pointpage__info-text">
