@@ -16,8 +16,12 @@ import Mail from './qa/Mail';
 
 import ModalCheck from './components/ModalCheck';
 import MainPage from './main/MainPage';
+
 import ManMain from './manage/ManMain';
 
+
+
+import MapPage from './map/MapPage';
 
 
 function App() {
@@ -44,23 +48,33 @@ function App() {
   return (
     <Router>
       <Routes>
-       <Route path="/" element={<MainPage />} />
+
+       
        <Route path="/ManMain" element={<ManMain />} />
        <Route path="/addItem" element = {<AddItem/>} />
        <Route path="/trashcheck" element = {<ModalCheck/>} />
 
-        <Route path="/CheckPage" element={isAuthenticated ? <CheckPage onLogout={handleLogout} /> : <ModalLog />}  />
-        <Route path="/my" element={isAuthenticated ? <MyPage onLogout={handleLogout} /> : <ModalLog />}  />
-        <Route path="/qa" element={isAuthenticated ? <QaPage onLogout={handleLogout} /> : <ModalLog />}  />
-        <Route path="/Notice1" element={isAuthenticated ? <Notice1 onLogout={handleLogout} /> : <ModalLog />}  />
-        <Route path="/Notice2" element={isAuthenticated ? <Notice2 onLogout={handleLogout} /> : <ModalLog />}  />
-        <Route path="/Mail" element={isAuthenticated ? <Mail onLogout={handleLogout} /> : <ModalLog />}  />
+        {/* 로그인 여부에 따라 메인 페이지 또는 로그인 페이지로 이동 */}
+        <Route 
+          path="/" 
+          element={isAuthenticated ? <MainPage /> : <Navigate to="/login" />} 
+        />
+        
+
+
+        <Route path="/CheckPage" element={isAuthenticated ? <CheckPage onLogout={handleLogout} /> : <ModalLog />} />
+        <Route path="/my" element={isAuthenticated ? <MyPage onLogout={handleLogout} /> : <ModalLog />} />
+        <Route path="/qa" element={isAuthenticated ? <QaPage onLogout={handleLogout} /> : <ModalLog />} />
+        <Route path="/Notice1" element={isAuthenticated ? <Notice1 onLogout={handleLogout} /> : <ModalLog />} />
+        <Route path="/Notice2" element={isAuthenticated ? <Notice2 onLogout={handleLogout} /> : <ModalLog />} />
+        <Route path="/Mail" element={isAuthenticated ? <Mail onLogout={handleLogout} /> : <ModalLog />} />
+        <Route path="/Map" element={isAuthenticated ? <MapPage onLogout={handleLogout} /> : <ModalLog />} />
 
         <Route 
           path="/lank" 
           element={isAuthenticated ? <LankPage onLogout={handleLogout} /> : <ModalLog />} 
         />
-        <Route s
+        <Route 
           path="/point" 
           element={isAuthenticated ? <PointPage onLogout={handleLogout} /> : <ModalLog />} 
         />
@@ -71,11 +85,9 @@ function App() {
         />
         {/* 로그인 페이지로 이동 */}
         <Route path="*" element={<Navigate to={isAuthenticated ? '/lank' : '/login'} />} />
-
       </Routes>
     </Router>
   );
 }
 
 export default App;
-
