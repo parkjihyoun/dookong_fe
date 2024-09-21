@@ -102,7 +102,7 @@ const PointPage = ({ className = '', ...props }) => {
         {/* 포인트 */}
         <div className="pointpage__header-frame">
           <div className="pointpage__header-title">포인트</div>
-          <Link to="/">
+          <Link to="/my">
           <img className="pointpage__back-vector" src={back} alt="Back Vector" />
           </Link>
         </div>

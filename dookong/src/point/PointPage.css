@@ -10,12 +10,10 @@ body {
 /* Point Page Container */
 .pointpage {
   background: #ffffff;
-  height: 852px;
+  width: 100vw;
+  height:100vh;
   width: 393px;
   position: relative;
-  overflow: hidden;
-  
-  padding: 0;
 }
 
 /* Header Section */
@@ -101,7 +99,7 @@ body {
   margin-top: 20px;
   position: absolute;
   bottom: 80px;
-  top: 120px;
+  top: 130px;
   left: 5%;
 }
 
@@ -160,13 +158,13 @@ body {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  top: 45px;
+  top: 35px;
 
 }
 
 .pointpage__back-vector {
   position: absolute;
-  top: 45px;
+  top: 35px;
   cursor: pointer;
 }
 
@@ -177,7 +175,7 @@ body {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  top: 310px;
+  top: 320px;
 }
 
 .pointpage__store-title {

@@ -20,14 +20,14 @@ function ManMain() {
   };
 
   return (
-    <div className="container">
-      <div className="main-content">
-        <div className="hi">
-          <div className="hi-text">
+    <div className="man-container">
+      <div className="man-main-content">
+        <div className="man-hi">
+          <div className="man-hi-text">
             <h1>지구를 지키자 !</h1>
             <h2>dookong</h2>
           </div>
-          <div className="hi-img">
+          <div className="man-hi-img">
             <img src={dookongImg} alt="Dookong" />
           </div>
         </div>

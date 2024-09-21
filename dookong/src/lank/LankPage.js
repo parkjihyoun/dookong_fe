@@ -1,7 +1,7 @@
 import React from "react";
 import "./LankPage.css";
 import profileImg from "../assets/profile.png";
-import kong2 from "../assets/kong2.png";
+import kong from "../assets/kong.png";
 import medal2 from "../assets/medal2.png";
 import medal1 from "../assets/medal1.png";
 import medal3 from "../assets/medal3.png";
@@ -25,10 +25,13 @@ export const LankPage = ({ className, ...props }) => {
   return (
     <div className={`lankpage ${className}`}>
       <div className="ranking-header">
-      <Link to="/">
-        <img src={vector0} alt="vector" className="vector-icon" />
+        <Link to="/my">
+          <img src={vector0} alt="vector" className="vector-icon" />
         </Link>
-        <h2>랭킹</h2>
+          <h2>랭킹</h2>
+        <Link to="/point">
+          <img src={kong} alt="kong" className="point-icon" />
+        </Link>
       </div>
 
       <div className="top-rankings">

@@ -93,7 +93,7 @@ export const MyPage = () => {
   };
 
   return (
-    <div className="container">
+    <div className="my-container">
       {/* 상단바 */}
       <header>
         <Link to="/" className="header-back">
@@ -105,7 +105,7 @@ export const MyPage = () => {
         </Link>
       </header>
 
-      <div className="content">
+      <div className="my-content">
         {/* 프로필 */}
         <div className="profile">
           <div className="icon">
@@ -140,7 +140,7 @@ export const MyPage = () => {
               <img src={kongiconimg} alt="kongicon" />
             </div>
             <div className="monthly-info">
-              <p>이번 달 포인트</p>
+              <p>이달의 포인트</p>
               <h2>{monthlyPoints} 콩</h2>
             </div>
           </div>
@@ -164,7 +164,7 @@ export const MyPage = () => {
           </div>
 
           {/* 내 랭킹 보기 버튼 */}
-          <button onClick={() => navigate('/rank')}>
+          <button onClick={() => navigate('/lank')}>
             내 랭킹 보기
           </button>
         </div>

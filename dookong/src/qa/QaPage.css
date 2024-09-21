@@ -6,9 +6,10 @@ body {
 
 }
 
-.container {
+.qa-container {
     background-color: #fff;
     width: 100vw;
+    height:100vh;
     margin: 0;
     padding: 0;
     border: none;
@@ -17,7 +18,7 @@ body {
     z-index: 1;
 }
 
-.container__background {
+.qa-container__background {
     background: #cde5c5;
     border-radius: 0 0 20px 20px;
     width: 393px;
@@ -45,6 +46,7 @@ header {
 
 .header-back {
     margin-top: 20px;
+    cursor: pointer;
 }
 
 .header-title {
@@ -55,6 +57,7 @@ header {
 
 .header-point {
     margin-top: 20px;
+    cursor: pointer;
 }
 
 .explain {
@@ -66,8 +69,9 @@ header {
 
 }
 
-.content {
+.qa-content {
     padding: 20px;
+    margin-top: 20px;
 }
 
 .item {
