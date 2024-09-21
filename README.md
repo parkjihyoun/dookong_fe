@@ -3,7 +3,7 @@
 
 
 # 🫛ItriEone - dookong🫛
-<h3>안녕하세요 저희는 dookong입니다!</h3>
+<br><h3>안녕하세요 저희는 dookong입니다!</h3></br>
 
 ## 서비스 요약
 <br><b>dookong</b> - 대구 시내, 특히 경북대학교 중심의 쓰레기 분리수거 활성화 플랫폼
