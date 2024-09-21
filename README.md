@@ -17,7 +17,7 @@
 ## :round_pushpin:팀원 소개
 <br>:rabbit: <b>최예윤 : 프론트앤드 starter 최예윤입니다.</b></br>
 <br>:cat: <b>박지현 : 프론트엔드 00차 박지현입니다.</b></br>
-<br>:hamster: <b>최원아 : 열정을 가득한 프론트앤드 개발자 최원아입니다.</b></br>
+<br>:hamster: <b>최원아 : 프론트앤드 열정 개발자 최원아입니다.</b></br>
 <br>:polar_bear: <b> 호예찬 : 백앤드 만능 호예찬입니다.</b></br>
 <br></br>
 ## :round_pushpin:시연 영상
