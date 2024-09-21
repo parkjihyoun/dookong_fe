@@ -30,7 +30,7 @@ dookong - 대구 시내, 특히 경북대학교 중심의 쓰레기 분리수거
 2. 
 
 ### 구현 방식
-프론트엔드로는 TypeScript와 React를 사용
+프론트엔드로는 JavaScript와 React를 사용
 백엔드로는 Java와 Spring을 사용. 배포 미정
 
 ## 향후 개선 혹은 발전 방안
