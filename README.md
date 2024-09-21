@@ -9,20 +9,20 @@
 ## :round_pushpin:서비스 요약
 - <b>dookong</b> - 대구 시내, 특히 경북대학교 중심의 쓰레기 분리수거 활성화 플랫폼
 <br></br>
-## 주제 구분
+## :round_pushpin:주제 구분
 -	S타입 대구 시내의 환경 문제를 해결하고 지속가능한 발전을 지원하는 서비스
   <br></br>
-## 팀원 소개
+## :round_pushpin:팀원 소개
 <br>:rabbit: <b>최예윤 :</b> </br>
 <br>:cat: <b>박지현 : 프론트엔드 00차 박지현입니다!</b></br>
 <br>:hamster: <b>최원아 :</b> </br>
 <br>:polar_bear: <b> 호예찬 :</b> </br>
 <br></br>
-## 시연 영상
+## :round_pushpin:시연 영상
 (필수) Youtube 링크
 (선택) Github Repository 페이지에서 바로 볼 수 있도록 넣어주셔도 좋습니다.
 <br></br>
-## 서비스 소개
+## :round_pushpin:서비스 소개
 ### 서비스 개요
 경북대학교 근처 주민, 학생들의 분리수거 배출을 장려하는 서비스이다.
 사용자는 서비스를 통해 인근 분리수거 배출소를 쉽게 찾을 수 있다.
