@@ -32,9 +32,9 @@ function MainPage() {
     navigate('/qa');
   };
 
-
   const goToMapPage = () => {
     navigate('/map');
+  }; // Closed this function correctly now.
 
   const handleImageClick = () => {
     setClicked(true);
@@ -42,7 +42,6 @@ function MainPage() {
     setTimeout(() => {
       setClicked(false);
     }, 200); // 200 밀리초 후에 다시 원래 상태로
-
   };
 
   return (
@@ -88,12 +87,14 @@ function MainPage() {
         <footer>
           <div className="footer-icons">
             <img onClick={goToMyPage} src={personImg} alt="personImg" />
-            <img onClick={goToQaPage} src={questionImg} alt="questionImg" />
             <img onClick={goToPointPage} src={coinImg} alt="coinImg" />
+            <img src={gpsImg} alt="gpsImg" />
             <img onClick={goToLankPage} src={stairImg} alt="stairImg" />
+            <img onClick={goToQaPage} src={questionImg} alt="questionImg" />
           </div>
         </footer>
       </div>
+
       <div style={{ margin: '20px' }}>
         <button onClick={goToQaPage} >
           고객센터
@@ -104,6 +105,7 @@ function MainPage() {
           지도
         </button>
       </div>
+
     </div>
   );
 }

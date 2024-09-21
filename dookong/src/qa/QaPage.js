@@ -13,10 +13,14 @@ const Header = () => (
         <img src={back} alt="back" />
     </Link>
     <div className="header-title">고객센터</div>
+
+
+
     <Link to="/point" className="header-point">
         <img src={kong} alt="kong" />
     </Link>
 </header>
+
 );
 
 const NoticeItem = ({ link, title, date }) => (
