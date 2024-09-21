@@ -42,9 +42,9 @@
 2. 
 
 ### :arrow_forward: 구현 방식
-프론트엔드로는 JavaScript와 React를 사용
+:point_right: 프론트엔드로는 JavaScript와 React를 사용
 <br></br>
-백엔드로는 Java와 Spring을 사용. 배포 미정
+:point_right: 백엔드로는 Java와 Spring을 사용. 배포 미정
 <br></br>
 ## :round_pushpin:향후 개선 혹은 발전 방안
 현재는 경북대학교 중심으로 대구 일부 지역에 서비스되고 있지만, 향후 확장한다면 대구시 전체뿐만 아니라 다른 지역에도 서비스할 수 있을 것으로 기대된다.
