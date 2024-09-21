@@ -8,7 +8,7 @@ dookong - 대구 시내, 특히 경북대학교 중심의 쓰레기 분리수거
 -	S타입 대구 시내의 환경 문제를 해결하고 지속가능한 발전을 지원하는 서비스
 
 ## 팀원 소개
-<br>:rabbit:<b>최예윤 :</b> </br>
+<br>:rabbit: <b>최예윤 :</b> </br>
 <br>:cat: <b>박지현 :</b> </br>
 <br>:hamster: <b>최원아 :</b> </br>
 <br>:polar_bear: <b> 호예찬 :</b> </br>
