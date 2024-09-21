@@ -16,7 +16,13 @@ import Mail from './qa/Mail';
 
 import ModalCheck from './components/ModalCheck';
 import MainPage from './main/MainPage';
+
+import ManMain from './manage/ManMain';
+
+
+
 import MapPage from './map/MapPage';
+
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false); // 로그인 여부 상태
@@ -42,13 +48,19 @@ function App() {
   return (
     <Router>
       <Routes>
+
+       
+       <Route path="/ManMain" element={<ManMain />} />
+       <Route path="/addItem" element = {<AddItem/>} />
+       <Route path="/trashcheck" element = {<ModalCheck/>} />
+
         {/* 로그인 여부에 따라 메인 페이지 또는 로그인 페이지로 이동 */}
         <Route 
           path="/" 
           element={isAuthenticated ? <MainPage /> : <Navigate to="/login" />} 
         />
-        <Route path="/addItem" element={<AddItem />} />
-        <Route path="/trashcheck" element={<ModalCheck />} />
+        
+
 
         <Route path="/CheckPage" element={isAuthenticated ? <CheckPage onLogout={handleLogout} /> : <ModalLog />} />
         <Route path="/my" element={isAuthenticated ? <MyPage onLogout={handleLogout} /> : <ModalLog />} />
