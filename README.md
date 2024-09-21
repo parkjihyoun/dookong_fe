@@ -1,4 +1,4 @@
-<img src="https://capsule-render.vercel.app/api?type=waving&height=250&color=auto&text=dookong&desc=%EC%93%B0%EB%A0%88%EA%B8%B0%20%EB%B6%84%EB%A6%AC%EC%88%98%EA%B1%B0%20%ED%99%9C%EC%84%B1%ED%99%94%20%ED%94%8C%EB%9E%AB%ED%8F%BC&descAlign=50&descAlignY=30">
+<img src="https://capsule-render.vercel.app/api?type=waving&height=250&color=gradient&text=dookong&desc=%EC%93%B0%EB%A0%88%EA%B8%B0%20%EB%B6%84%EB%A6%AC%EC%88%98%EA%B1%B0%20%ED%99%9C%EC%84%B1%ED%99%94%20%ED%94%8C%EB%9E%AB%ED%8F%BC&descAlign=50&descAlignY=30">
 
 
 
@@ -50,7 +50,6 @@
 현재는 경북대학교 중심으로 대구 일부 지역에 서비스되고 있지만, 향후 확장한다면 대구시 전체뿐만 아니라 다른 지역에도 서비스할 수 있을 것으로 기대된다.
 <br></br>
 당장의 환경오염 문제 개선뿐만 아니라 분리수거에 대한 인식이 미미한 대학생, 주민들에게 올바른 분리수거 방법과 분리수거의 중요성을 인식시킬 수 있다.
-<img src="https://capsule-render.vercel.app/api?type=waving&height=250&color=auto&text=-%20환경을%20살리자,%20지구를%20지키자!%20-&section=footer&fontSize=40">
 
 
 
