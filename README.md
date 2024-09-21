@@ -17,7 +17,7 @@
 <br>:rabbit: <b>최예윤 :</b> </br>
 <br>:cat: <b>박지현 : 프론트엔드 00차 박지현입니다!</b></br>
 <br>:hamster: <b>최원아 :</b> </br>
-<br>:polar_bear: <b> 호예찬 :</b> </br>
+<br>:polar_bear: <b> 호예찬 :</b>백앤드 만능 호예찬입니다.</br>
 <br></br>
 ## :round_pushpin:시연 영상
 (필수) Youtube 링크
