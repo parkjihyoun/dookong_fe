@@ -61,9 +61,9 @@
     justify-content: space-between;
     padding: 10px;
     margin-bottom: 10px;
-    background-color: #e7f9f1; /* Light green background */
     border-radius: 8px;
     overflow-y: auto;
+    margin-left: 5px;
   }
   
   .pointplus div span {
@@ -84,7 +84,7 @@
     justify-content: space-between;
     padding: 10px;
     margin-bottom: 10px;
-    background-color: #fde7e7; /* Light red background */
+    margin-left: 5px;
     border-radius: 8px;
     overflow-y: auto;
   }
