@@ -46,8 +46,7 @@ body {
     display: flex;
     justify-content: space-around;
     margin-bottom: 20px;
-    margin-top: 30px;
-    
+    margin-top: 10px;
   }
   
   .rank-item {
@@ -55,7 +54,7 @@ body {
   }
   
   .rank-name {
-    font-family: "Inter-Bold", sans-serif;
+    font-family: "Arial", sans-serif;
     font-size: 20px; 
     margin-bottom: 10px;
     color: #313131;
@@ -63,11 +62,11 @@ body {
   }
   
   .profile-img {
-    width: 55px; 
-    height: 55px; 
+    width: 50px; 
+    height: 50px; 
     border-radius: 50%;
     border: 3px solid #538f74;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
   }
   
   .rank-points {
@@ -87,7 +86,7 @@ body {
     background: #ffffff;
     border-radius: 20px 20px 0 0;
     padding: 10px;
-    height: 50%;
+    height: 42%;
     width: 100%;
     position: absolute;
     bottom: 0;
@@ -149,7 +148,7 @@ body {
     height: 45px;
     position: absolute;
     left: calc(50% - 126.5px);
-    top: 600px;
+    top: 300px;
     cursor: pointer;
   }
   
