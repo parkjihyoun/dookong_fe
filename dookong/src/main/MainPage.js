@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './MainPage.css'; // 외부 CSS 파일 불러오기
+import './MainPage.css'; 
 import dookongImg from '../assets/dookong.png'; // 이미지 경로 import
 import plantImg from '../assets/plant.png';
 import cameraImg from '../assets/camera.png';
@@ -13,6 +13,12 @@ import stairImg from '../assets/stair.png';
 function MainPage() {
   const [clicked, setClicked] = useState(false);
   
+  // 포인트 변수 (예시로 4750 포인트)
+  const points = 4750;
+  
+  // 1000 포인트당 1 그루의 나무를 살렸다고 계산
+  const treesSaved = Math.floor(points / 1000);
+
   // useNavigate는 컴포넌트의 최상위에서 호출해야 합니다.
   const navigate = useNavigate();
 
@@ -34,7 +40,7 @@ function MainPage() {
 
   const goToMapPage = () => {
     navigate('/map');
-  }; // Closed this function correctly now.
+  }; 
 
   const handleImageClick = () => {
     setClicked(true);
@@ -63,14 +69,14 @@ function MainPage() {
             <h3>누적 포인트</h3>
           </div>
           <div className="kong-info">
-            <p className="points">4,750</p>
+            <p className="points">{points}</p>
             <span className="kong">콩</span>
           </div>
         </div>
 
         <div className="tree-section">
           <span className="tree1">당신은 지금까지 </span>
-          <span className="tree2">1</span>
+          <span className="tree2">{treesSaved}</span>
           <span className="tree3">그루의 나무를 살렸어요!</span>
         </div>
 
@@ -98,5 +104,5 @@ function MainPage() {
   );
 }
 
-
 export default MainPage;
+
