@@ -1,8 +1,11 @@
 /* Box Sizing */
-.pointpage,
-.pointpage * {
-  box-sizing: border-box;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #fff;
 }
+
 
 /* Point Page Container */
 .pointpage {
@@ -11,6 +14,8 @@
   width: 393px;
   position: relative;
   overflow: hidden;
+  
+  padding: 0;
 }
 
 /* Header Section */
@@ -27,7 +32,7 @@
   background: #cde5c5;
   border-radius: 0 0 20px 20px;
   width: 393px;
-  height: 329px;
+  height: 300px;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -38,12 +43,10 @@
 /* Points Display */
 .pointpage__points-frame {
   width: 234px;
-  height: 54px;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  top: 139px;
-  overflow: hidden;
+  top: 130px;
 }
 
 .pointpage__points {
@@ -98,6 +101,7 @@
   margin-top: 20px;
   position: absolute;
   bottom: 80px;
+  top: 120px;
   left: 5%;
 }
 
@@ -134,7 +138,7 @@
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  top: 270px;
+  top: 250px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -142,38 +146,27 @@
 
 /* Header Frame */
 .pointpage__header-frame {
-  width: 393px;
-  height: 64px;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 60px;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
 }
 
 .pointpage__header-title {
-  color: #3b403d;
   text-align: center;
-  font-family: "Inter-Bold", sans-serif;
-  font-size: 26px;
+  font-size: 23px;
   font-weight: 700;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  top: 12px;
-  width: 136px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  top: 45px;
+
 }
 
 .pointpage__back-vector {
-  width: 12.65;
-  height: 20.9;
   position: absolute;
-  left: 5%;
-  top: 12px;
-  overflow: visible;
+  top: 45px;
   cursor: pointer;
 }
 
@@ -184,13 +177,13 @@
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  top: 365px;
+  top: 310px;
 }
 
 .pointpage__store-title {
   color: #3b403d;
   text-align: center;
-  font-family: "Inter-Bold", sans-serif;
+  font-family: "Arial", sans-serif;
   font-size: 28px;
   font-weight: 700;
   position: absolute;
@@ -222,15 +215,12 @@
 /* Category Buttons */
 .pointpage__categories {
   border-radius: 7px;
-  padding: 6px 0;
   display: flex;
-  gap: 5px;
+  gap: 3px;
   align-items: center;
   justify-content: center;
-  height: 41px;
-  position: absolute;
-  left: 21px;
-  top: 56px;
+  height: 150px;
+  padding-left: 10px;
 }
 
 /* "준비중입니다.." */

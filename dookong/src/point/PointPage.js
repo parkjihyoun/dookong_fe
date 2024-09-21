@@ -5,7 +5,7 @@ import StoreCategory from './StoreCategory';
 import { Link } from 'react-router-dom';
 
 import groupIcon from '../assets/kong2.png';
-import backVector from '../assets/vector.svg';
+import back from '../assets/back.png';
 import group1 from '../assets/kong1.svg';
 import group2 from '../assets/kong1.svg';
 import group3 from '../assets/kong1.svg';
@@ -95,14 +95,15 @@ const PointPage = ({ className = '', ...props }) => {
 
         {/* 알림 */}
         <div className="pointpage__info-text">
-          포인트는 스토어에서 현금처럼 사용할 수 있습니다.
+          포인트는 스토어에서 <br />
+          현금처럼 사용할 수 있습니다.
         </div>
 
         {/* 포인트 */}
         <div className="pointpage__header-frame">
           <div className="pointpage__header-title">포인트</div>
           <Link to="/">
-          <img className="pointpage__back-vector" src={backVector} alt="Back Vector" />
+          <img className="pointpage__back-vector" src={back} alt="Back Vector" />
           </Link>
         </div>
       </div>
