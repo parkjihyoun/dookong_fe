@@ -1,11 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './PointPage.css';
 import RewardItem from './RewardItem';
 import StoreCategory from './StoreCategory';
-import { Link, useNavigate } from 'react-router-dom';  // Import useNavigate for navigation
+
+import { Link, useNavigate } from 'react-router-dom';
+import groupIcon from '../assets/kong2.png';
+import backVector from '../assets/vector.svg';
+
+
 import AllPoint from '../components/AllPoint';  
 
-import groupIcon from '../assets/kong2.png';
+
 import back from '../assets/back.png';
 import group1 from '../assets/kong1.svg';
 import group2 from '../assets/kong1.svg';
@@ -19,31 +24,69 @@ import gs25Image from '../assets/gs25.png';
 
 const categories = ['전체', '🔥HOT', '편의점', '간식', '화장품'];
 
-const initialRewards = {
-  전체: [
-    { imageSrc: cuImage, groupSrc: group1, title: "4,800 콩", description: "CU 모바일 상품권\n5천원권" },
-    { imageSrc: naverImage, groupSrc: group2, title: "800 콩", description: "NAVER 모바일 쿠폰\n1천 포인트" },
-    { imageSrc: lotteImage, groupSrc: group3, title: "28,000 콩", description: "롯데 모바일 상품권\n3만원권" },
-    { imageSrc: gs25Image, groupSrc: group4, title: "9,800 콩", description: "GS25 모바일 상품권\n1만원권" },
-  ],
-  '편의점': [
-    { imageSrc: cuImage, groupSrc: group1, title: "4,800 콩", description: "CU 모바일 상품권\n5천원권" },
-    { imageSrc: naverImage, groupSrc: group2, title: "800 콩", description: "NAVER 모바일 쿠폰\n1천 포인트" },
-    { imageSrc: gs25Image, groupSrc: group4, title: "9,800 콩", description: "GS25 모바일 상품권\n1만원권" },
-  ],
-  '🔥HOT': [
-    { imageSrc: lotteImage, groupSrc: group3, title: "28,000 콩", description: "롯데 모바일 상품권\n3만원권" },
-    { imageSrc: cuImage, groupSrc: group1, title: "4,800 콩", description: "CU 모바일 상품권\n5천원권" },
-  ],
-  '간식': [],
-  '화장품': [],
-};
-
 const PointPage = ({ className = '', ...props }) => {
   const [selectedCategory, setSelectedCategory] = useState('전체');
-  const [points, setPoints] = useState(4750); // Starting with 4750 points
-  const [showModal, setShowModal] = useState(false); // Control modal visibility
-  const navigate = useNavigate(); // Initialize navigate hook
+
+  const [points, setPoints] = useState(0); // Default to 0 points initially
+  const [rewards, setRewards] = useState({
+    전체: [],
+    '🔥HOT': [],
+    '편의점': [],
+    '간식': [],
+    '화장품': [],
+  });
+
+  const [memberId, setMemberId] = useState(null);
+  const navigate = useNavigate(); // 리디렉션을 위한 navigate
+
+  useEffect(() => {
+    // localStorage에서 memberId 가져오기
+    const storedUserInfo = JSON.parse(localStorage.getItem('userInfo'));
+
+    if (storedUserInfo && storedUserInfo.memberId) {
+      setMemberId(storedUserInfo.memberId); // memberId 상태 설정
+    } else {
+      // memberId가 없으면 로그인 페이지로 리디렉션
+      navigate('/login');
+    }
+  }, [navigate]);
+
+  useEffect(() => {
+    if (memberId) {
+      // Fetch the user's points
+      const fetchUserPoints = async () => {
+        try {
+          const response = await fetch(`/api/members/${memberId}`);
+          const data = await response.json();
+          setPoints(data.totalPoint); // Set the points from the fetched data
+        } catch (error) {
+          console.error('Error fetching user points:', error);
+        }
+      };
+
+      // Fetch items for the store
+      const fetchStoreItems = async () => {
+        try {
+          const response = await fetch('/api/items/all');
+          const data = await response.json();
+          const categorizedRewards = {
+            전체: data,
+            '🔥HOT': data.filter(item => item.category === '🔥HOT'),
+            '편의점': data.filter(item => item.category === '편의점'),
+            '간식': data.filter(item => item.category === '간식'),
+            '화장품': data.filter(item => item.category === '화장품'),
+          };
+          setRewards(categorizedRewards);
+        } catch (error) {
+          console.error('Error fetching items:', error);
+        }
+      };
+
+      fetchUserPoints(); // Call the function to fetch user points
+      fetchStoreItems(); // Fetch store items
+    }
+  }, [memberId]);
+
 
   const handleCategoryClick = (category) => {
     setSelectedCategory(category);
@@ -51,21 +94,22 @@ const PointPage = ({ className = '', ...props }) => {
 
   // Navigate to /map when "적립하러가기" is clicked
   const handleAddPoints = () => {
-    navigate('/map');  // Navigate to the /map route
+
+    setPoints((prevPoints) => prevPoints + 10);
   };
 
   const renderRewardItems = () => {
-    const rewards = initialRewards[selectedCategory] || [];
-    if (rewards.length === 0) {
+    const rewardsInCategory = rewards[selectedCategory] || [];
+    if (rewardsInCategory.length === 0 )) {
+
       return <div className="coming-soon">준비중입니다..</div>;
     }
 
-    return rewards.map((reward, index) => (
+    return rewardsInCategory.map((reward, index) => (
       <RewardItem
         key={index}
-        imageSrc={reward.imageSrc}
-        groupSrc={reward.groupSrc}
-        title={reward.title}
+        imageSrc={reward.pictureUrl} // Use the image URL from the server
+        title={`${reward.requiredPoints} 콩`}
         description={reward.description}
       />
     ));
@@ -81,7 +125,6 @@ const PointPage = ({ className = '', ...props }) => {
           <img className="pointpage__icon" src={groupIcon} alt="Group Icon" />
         </div>
 
-        {/* 버튼 */}
         <div className="pointpage__actions">
           <div className="pointpage__button" onClick={handleAddPoints}>
             <div className="pointpage__button-text">적립하러가기</div>
@@ -92,24 +135,22 @@ const PointPage = ({ className = '', ...props }) => {
           </button>
         </div>
 
-        {/* 알림 */}
         <div className="pointpage__info-text">
           포인트는 스토어에서 <br />
           현금처럼 사용할 수 있습니다.
         </div>
 
-        {/* 포인트 */}
         <div className="pointpage__header-frame">
           <div className="pointpage__header-title">포인트</div>
 
           <Link to="/">
-            <img className="pointpage__back-vector" src={back} alt="Back Vector" />
+
+            <img className="pointpage__back-vector" src={backVector} alt="Back Vector" />
 
           </Link>
         </div>
       </div>
 
-      {/* 상점 */}
       <div className="pointpage__store-section">
         <div className="pointpage__store-title">🌱 두콩이네 상점 🌱</div>
         <div className="pointpage__rewards-grid">{renderRewardItems()}</div>
