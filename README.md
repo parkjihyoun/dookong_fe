@@ -3,6 +3,7 @@
 
 
 # 🫛ItriEone - dookong🫛
+<br>![Dookong](assets/dookong.png)</br>
 <h3>안녕하세요 저희는 dookong입니다!</h3><br></br>
 
 ## 서비스 요약
