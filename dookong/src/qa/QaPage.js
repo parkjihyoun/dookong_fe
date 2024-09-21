@@ -9,14 +9,14 @@ import qnaimg from '../assets/qna.png';
 
 const Header = () => (
     <header>
-    <Link to="/my" className="header-back">
+    <Link to="/" className="header-back">
         <img src={back} alt="back" />
     </Link>
     <div className="header-title">고객센터</div>
 
 
 
-    <Link to="/point" className="header-point">
+    <Link to="/my" className="header-point">
         <img src={kong} alt="kong" />
     </Link>
 </header>

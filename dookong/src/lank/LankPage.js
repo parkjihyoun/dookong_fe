@@ -47,11 +47,13 @@ export const LankPage = ({ className, ...props }) => {
   return (
     <div className={`lankpage ${className}`}>
       <div className="ranking-header">
-        <Link to="/my">
+        <Link to="/">
           <img src={vector0} alt="vector" className="vector-icon" />
         </Link>
-        <h2>랭킹</h2>
-        <Link to="/point">
+
+          <h2>랭킹</h2>
+        <Link to="/my">
+
           <img src={kong} alt="kong" className="point-icon" />
         </Link>
       </div>
