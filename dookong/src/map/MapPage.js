@@ -97,7 +97,7 @@ const Header = () => (
 
 const CameraButton = () => (
   <Link to="/trashcheck" className="camera-link">
-    <img src={cameraImg} alt="Camera" className="camera-icon" />
+    <img src={cameraImg} alt="Camera" className="camera-icon2" />
   </Link>
 );
 
