@@ -109,7 +109,7 @@ const CheckPage = () => {
   return (
     <div className="container">
       <header>
-        <div className="header-back" onClick={() => navigate('/my')}>
+        <div className="header-back" onClick={() => navigate('/ManMain')}>
           <img src={back} alt="back" />
         </div>
         <div className="header-title">포인트관리</div>
