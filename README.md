@@ -18,7 +18,7 @@
 <br>:rabbit: <b>최예윤 : 프론트엔드 starter 최예윤입니다.</b></br>
 <br>:cat: <b>박지현 : 프론트엔드 노력형 박지현입니다.</b></br>
 <br>:hamster: <b>최원아 : 프론트엔드 열정 개발자 최원아입니다.</b></br>
-<br>:polar_bear: <b> 호예찬 : 백엔드 만능 호예찬입니다.</b></br>
+<br>:polar_bear: <b> 호예찬 : 백엔드 호예찬입니다.</b></br>
 <br></br>
 ## :round_pushpin:시연 영상
 (필수) Youtube 링크
