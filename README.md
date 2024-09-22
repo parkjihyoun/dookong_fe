@@ -8,6 +8,10 @@
 <h3>안녕하세요, 저희는 :star2:dookong:star2: 입니다!</h3>
 <br></br>
 
+## :round_pushpin:dookong server repository
+- <b>dookong-server</b> - https://github.com/hoyechan/dookong-server
+<br></br>
+
 ## :round_pushpin:서비스 요약
 - <b>dookong</b> - 대구 시내, 특히 경북대학교 중심의 쓰레기 분리수거 활성화 플랫폼
 <br></br>
@@ -67,6 +71,8 @@
 <br></br>
 - 당장의 환경오염 문제 개선뿐만 아니라 분리수거에 대한 인식이 미미한 대학생, 주민들에게 올바른 분리수거 방법과 분리수거의 중요성을 인식시켜 장기적인 우리나라의 환경 개선 효과와 건강한 시민 의식 향상까지 기대할 수 있다.
 <br></br>
+
+
 
 
 
