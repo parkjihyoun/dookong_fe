@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './PointPage.css';
 import RewardItem from './RewardItem';
 import StoreCategory from './StoreCategory';
-import PurchaseModal from './PurchaseModal'; 
+import PurchaseModal from './PurchaseModal';
 import { Link, useNavigate } from 'react-router-dom';
 import groupIcon from '../assets/kong2.png';
 import backVector from '../assets/vector.svg';
@@ -72,18 +72,41 @@ const PointPage = ({ className = '', ...props }) => {
     setSelectedCategory(category);
   };
 
-  const handleAddPoints = () => {
-    setPoints((prevPoints) => prevPoints + 10);
-  };
-
   const handleRewardClick = (reward) => {
+    console.log('선택된 상품:', reward.itemId); // 로그로 확인
     setSelectedReward(reward); // 클릭한 상품 정보 저장
     setIsModalOpen(true); // 모달 열기
   };
 
-  const handleConfirmPurchase = () => {
-    console.log(`${selectedReward.title} 구매 완료`);
-    setIsModalOpen(false); // 모달 닫기
+  // 구매 확인 시 호출
+  const handleConfirmPurchase = async () => {
+    if (!selectedReward || !memberId) {
+      console.error('memberId 또는 selectedReward가 누락되었습니다.');
+      return;
+    }
+
+    try {
+      const response = await fetch('/api/items/purchase', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          memberId: memberId,
+          itemId: selectedReward.itemId,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('구매 실패');
+      }
+
+      const data = await response.json();
+      setPoints(data.memberReadDto.totalPoint); // 구매 후 남은 포인트 업데이트
+      setIsModalOpen(false); // 모달 닫기
+    } catch (error) {
+      console.error('Error purchasing item:', error);
+    }
   };
 
   const renderRewardItems = () => {
@@ -102,7 +125,6 @@ const PointPage = ({ className = '', ...props }) => {
         />
       </div>
     ));
-    
   };
 
   return (
@@ -115,10 +137,15 @@ const PointPage = ({ className = '', ...props }) => {
           <img className="pointpage__icon" src={groupIcon} alt="Group Icon" />
         </div>
 
+       
+
+          
         <div className="pointpage__actions">
           <Link to="/map" className="tomapbutton">적립하러가기</Link>
           <Link to="/allpoint" className="toallpointbutton">전체 내역</Link>
         </div>
+
+       
 
         <div className="pointpage__info-text">
           포인트는 스토어에서 현금처럼 사용할 수 있습니다.
@@ -156,6 +183,7 @@ const PointPage = ({ className = '', ...props }) => {
         onClose={() => setIsModalOpen(false)}
         onConfirm={handleConfirmPurchase}
         reward={selectedReward}
+        totalPoints={points}
       />
     </div>
   );
