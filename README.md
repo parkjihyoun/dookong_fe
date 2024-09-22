@@ -15,10 +15,10 @@
 -	S타입 - 대구 시내의 환경 문제를 해결하고 지속가능한 발전을 지원하는 서비스
   <br></br>
 ## :round_pushpin:팀원 소개
-<br>:rabbit: <b>최예윤 : 프론트앤드 starter 최예윤입니다.</b></br>
-<br>:cat: <b>박지현 : 프론트엔드 00차 박지현입니다.</b></br>
-<br>:hamster: <b>최원아 : 프론트앤드 열정 개발자 최원아입니다.</b></br>
-<br>:polar_bear: <b> 호예찬 : 백앤드 만능 호예찬입니다.</b></br>
+<br>:rabbit: <b>최예윤 : 프론트엔드 starter 최예윤입니다.</b></br>
+<br>:cat: <b>박지현 : 프론트엔드 노력형 박지현입니다.</b></br>
+<br>:hamster: <b>최원아 : 프론트엔드 열정 개발자 최원아입니다.</b></br>
+<br>:polar_bear: <b> 호예찬 : 백엔드 만능 호예찬입니다.</b></br>
 <br></br>
 ## :round_pushpin:시연 영상
 (필수) Youtube 링크
